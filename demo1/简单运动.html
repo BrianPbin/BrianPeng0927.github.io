@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>摩擦力运动</title>
+    <style>
+        #div{ border-left: 1px solid gray; height: 300px; position: absolute; top: 0px; left: 500px;}
+        #oDiv{ position: absolute; width: 100px; height: 100px; background: skyblue; left: 0px; top: 50px;}
+        #oDiv2{ position: absolute; width: 100px; height: 100px; background: skyblue; left: 1000px; top: 170px;}
+    </style>
+    <script src="a.js"></script>
+    <script>
+        onload = function () {
+            var btn1 = document.getElementsByTagName("input")[0];
+            var btn2 = document.getElementsByTagName("input")[1];
+            var div1 = document.getElementById("oDiv");
+            var div2 = document.getElementById("oDiv2");
+            btn1.onclick = function () {
+//                var dis = 500;//这个距离是给定的 target
+//                var id = setInterval(function () {
+//                        var x = parseFloat(div1.style.left);
+//                        dis = 500-x;
+//                        var speed = dis/10;
+//                        div1.style.left = x + speed +  "px";
+//                        if(parseInt(div1.style.left) >=500) {
+//                            clearInterval(id);
+//                        }
+//                },30);
+                move(div1,div2,30);
+
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="开始运动"  />
+<input type="button" value="开始运动" />
+<div id="oDiv" style="top: 50px; left: 0px;"></div>
+<div id="div"></div>
+<div id="oDiv2" style="top: 170px; left: 1000px;"></div>
+
+</body>
+</html>

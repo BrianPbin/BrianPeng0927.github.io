@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        onload = function () {
+            var spans = document.getElementsByTagName("span");
+            var spanMonth =spans[0];
+            var spanDate =spans[1];
+            var spanHour = spans[2];
+            var spanMinutes = spans[3];
+            var spanSeconds = spans[4];
+            var d = new Date();
+            setInterval(function () {
+                d.setSeconds(d.getSeconds()+1);
+                spanMonth.innerHTML = d.getMonth()+1+"/";
+                spanDate.innerHTML = d.getDate()+"&ensp;";
+                spanHour.innerHTML = d.getHours()+":";
+                spanMinutes.innerHTML = d.getMinutes()+":";
+                spanSeconds.innerHTML = d.getSeconds();
+            },1000)
+        }
+    </script>
+</head>
+<body>
+    <span></span> <span></span> <span></span> <span></span> <span></span>
+</body>
+</html>

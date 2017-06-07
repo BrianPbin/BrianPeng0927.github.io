@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li{
+            list-style: none;
+        }
+        .outer li{
+            float: left;
+            width:100px;
+        }
+        .inner{
+            overflow: hidden;
+            display: none;
+        }
+
+    </style>
+    <script>
+        onload = function () {
+            var lis = document.getElementsByClassName("outer")[0].children;
+            for(var i=0;i<lis.length;i++){
+                lis[i].index = i;
+                lis[i].onmouseover= function () {
+                    this.children[0].style.display = "block";
+                }
+
+                lis[i].onmouseout = function () {
+                    this.children[0].style.display = "none";//注意jquery里需要注意取消排队机制
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul class="outer">
+        <li>亚洲
+            <ul class="inner">
+            <li>中国</li>
+            <li>小日本</li>
+            <li>老挝</li>
+            </ul>
+
+        </li>
+        <li>美洲
+            <ul class="inner">
+                <li>美国</li>
+                <li>加拿大</li>
+                <li>巴西</li>
+            </ul>
+        </li>
+        <li>欧洲
+            <ul class="inner">
+                <li>德国</li>
+                <li>意大利</li>
+                <li>法国</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
