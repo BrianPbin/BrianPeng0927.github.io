@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+.header_con .logo_txt{font-size:18px;}
+
+#main{height:500px;width:100%;}
+.main_con{height:500px;}
+.main_con ._Img{float:left;margin-top:46px;margin-right:20px;}
+.main_con ._Img a{display:block;}
+.main_con ._login{float:left;width:400px;font-family:"微软雅黑",Arial,Helvetica,sans-serif;color:#515151;}
+.main_con ._login ._top{width:400px;height:50px;line-height:50px;}
+.main_con ._login ._top p{float:left;font-size:16px;}
+.main_con ._login ._top a{float:right;color:#515151;height:25px;width:70px;border:1px solid #34b742;line-height:25px;text-align:center;margin-top:12px;background:#fff4f0;}
+.main_con ._login ._center{width:398px;border:1px solid #cdcdcd;border-bottom:0;}
+.main_con ._login ._center ._type{width:398px;height:31px;}
+.main_con ._login ._center ._type li{float:left;width:132px;height:30px;line-height:30px;cursor:pointer;border-bottom:1px solid #cdcdcd;border-right:1px solid #cdcdcd;font-size:14px;}
+.main_con ._login ._center ._type ._select{border-bottom:1px solid #fff;position:relative;top:-2px;border-top:2px solid #69af05;}
+.main_con ._login ._center ._type .sy_user{border-right:0;}
+.main_con ._login ._center ._type li em{float:left;width:15px;height:15px;margin:10px 5px 0 25px;}
+.main_con ._login ._center ._type .sy_user em{background:url(../img/loginicon.png) no-repeat 0 -48px;}
+.main_con ._login ._center ._type .ssf_user em{background:url(../img/loginicon.png) no-repeat 0 -25px;}
+.main_con ._login ._center ._type .yx_user em{background:url(../img/loginicon.png) no-repeat;}
+.main_con ._login ._center ._show{width:398px;}
+.main_con ._login ._center ._show form{display:none;}
+.main_con ._login ._center ._show ._list1{display:block;}
+.main_con ._login ._bottom{width:365px;height:46px;padding:10px 0 0 33px;border:1px solid #cdcdcd;}
+.main_con ._login ._bottom ._p1{width:365px;height:20px;line-height:20px;}
+.main_con ._login ._bottom ._p2{width:365px;height:26px;color:#176246;line-height:26px;}
+.main_con ._login ._bottom ._p2 a{color:#176246;}
+.main_con ._login ._bottom ._p2 a:hover{text-decoration:underline;}
+.main_con ._login ._center ._show form{width:324px;margin:14px 0 0 33px;padding-bottom:15px;}
+.main_con ._login ._center ._show form ._username{width:324px;height:64px;}
+.main_con ._login ._center ._show form .password{width:324px;height:64px;margin-top:15px;}
+.main_con ._login ._center ._show form ._code{width:324px;height:38px;margin-top:30px;margin-bottom:27px;position:relative;}
+.main_con ._login ._center ._show ._list1 ._code{margin-bottom:0;}
+.main_con ._login ._center ._show form ._forget{width:324px;height:22px;text-align:right;}
+.main_con ._login ._center ._show form ._submit{width:324px;height:41px;margin-top:5px;}
+.main_con ._login ._center ._show form ._agree{width:324px;height:30px;line-height:30px;text-align:right;}
+.main_con ._login ._center ._show form ._title{display:block;width:324px;height:26px;line-height:26px;}
+.main_con ._login ._center ._show form ._input{display:block;width:320px;height:36px;border:1px solid #cdcdcd;position:relative;}
+.main_con ._login ._center ._show form ._input input{float:left;width:274px;height:20px;line-height:20px;padding:8px 5px;border:0;font-size:14px;}
+.main_con ._login ._center ._show form ._username ._input em{float:left;height:38px;width:30px;background:url(../img/icon1.jpg) no-repeat center;}
+.main_con ._login ._center ._show form .password ._input em{float:left;height:38px;width:30px;background:url(../img/icon2.jpg) no-repeat center;}
+.main_con ._login ._center ._show form ._code input{float:left;width:94px;height:20px;line-height:20px;padding:8px 5px;border:1px solid #d5d5d5;margin-right:10px;}
+.main_con ._login ._center ._show form ._code span{float:left;width:106px;height:36px;background:#ccc;line-height:36px;text-align:center;cursor:pointer;}
+.main_con ._login ._center ._show form ._forget a{color:#515151;padding-right:5px;}
+.main_con ._login ._center ._show form ._forget a:hover{text-decoration:underline;}
+.main_con ._login ._center ._show form ._submit a{display:block;height:41px;line-height:41px;font-size:18px;letter-spacing:0.8em;text-align:center;color:#f2f1f1;background:url(../img/login_bg.jpg) no-repeat left top;}
+.main_con ._login ._center ._show form ._agree a{color:#176246;}
+.main_con ._login ._center ._show form ._agree a:hover{text-decoration:underline;}
+.main_con ._login ._center ._show form ._warn{display:none;position:absolute;bottom:-22px;left:-1px;width:315px;height:20px;line-height:20px;background:#ffece5;padding-left:5px;border:1px solid #fa9600;border-top:0;opacity:0.9;color:#fa6400;}
+.main_con ._login ._center ._show form ._code ._warn{width:99px;bottom:-21px;left:0;}

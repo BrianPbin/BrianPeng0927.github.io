@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+body{background:#f5f5f5;}
+#main{height:573px;width:100%;}
+.main_con{height:573px;}
+.main_con .main_top{margin-left:333px;width:666px;height:37px;}
+.main_con .main_top ._user{float:left;height:38px;}
+.main_con .main_top ._user li{float:left;width:163px;height:38px;margin-right:5px;line-height:38px;text-align:center;font-family:"微软雅黑";cursor:pointer;position:relative;top:1px;}
+.main_con .main_top ._user ._select{background:url(../img/tabbg.jpg) no-repeat left top;font-size:16px;}
+.main_con .main_top ._user ._unselect{background:url(../img/tabbg1.jpg) no-repeat left top;font-size:14px;}
+.main_con .main_top p{float:right;line-height:1.4em;padding-top:14px;color:#565656;width:130px;}
+.main_con .main_top p a{color:#6e9b0c;font-family:"宋体",Arial,Helvetica,sans-serif;}
+.main_con .main_top p a:hover{text-decoration:underline;}
+.main_body{padding:45px 0 0 40px;width:960px;border-top:1px solid #d5d5d5;min-height:490px;height:auto!important;height:490px;background:#fff;font-family:"宋体",Arial,Helvetica,sans-serif;line-height:1.4em;}
+.main_body ._personal{background:url(../img/personal.jpg) no-repeat right 78px;}
+.main_body ._personal form{min-height:403px;height:auto!important;height:403px;width:960px;}
+.main_body ._personal .konw_more{height:16px;width:930px;padding:15px 10px 10px 45px;border-top:1px dotted #dcdcdc;position:relative;left:-30px;background: url(../img/laba.png) no-repeat 25px 16px}
+.main_body ._personal .konw_more a{color:#669900;}
+.main_body ._personal form ._user{width:960px;height:38px;margin-bottom:30px;}
+.main_body ._personal form ._password{width:960px;height:38px;}
+.main_body ._personal form ._rank{width:769px;height:38px;padding:5px 0 0 191px;}
+.main_body ._personal form ._confirm{width:960px;height:38px;margin-bottom:30px;}
+.main_body ._personal form ._code{width:960px;height:38px;margin-bottom:30px;}
+.main_body ._personal form ._agreement{width:843px;height:38px;padding-left:117px;}
+.main_body ._personal form ._submit{width:843px;height:38px;margin:10px 0 0 117px;}
+.main_body ._personal form ._sms{width:960px;height:38px;margin-bottom:30px;display:none;}
+.main_body ._personal form label{float:left;height:38px;width:118px;line-height:38px;font-size:14px;color:#515151;text-align:right;}
+.main_body ._personal form label .warm{color:#ff4800;}
+.main_body ._personal form .input_con{float:left;width:268px;height:36px;border:1px solid #cdcdcd;overflow:hidden;}
+.main_body ._personal form ._code .input_con{width:68px;}
+.main_body ._personal form ._sms .input_con{width:153px;}
+.main_body ._personal form .input_con input{float:left;width:228px;height:36px;padding:0 5px;border:none;line-height:36px;font-size:12px;font-family: "微软雅黑";font-weight:inherit;color:#515151;}
+.main_body ._personal form ._code .input_con input{width:35px;}
+.main_body ._personal form ._sms .input_con input{width:120px;}
+.main_body ._personal form .input_con em{float:left;width:23px;height:36px;background:url(../img/icon4.jpg) no-repeat center;display:none;}
+.main_body ._personal form ._prompt{float:left;width:230px;height:36px;line-height:38px;color:#666;padding:0 10px 0 15px;display:none;}
+.main_body ._personal form ._rank p{float:left;height:16px;line-height:16px;color:#666;}
+.main_body ._personal form ._rank span{float:left;height:16px;width:34px;margin-right:2px;background:#c4c4c4;color:#fff;line-height:16px;text-align:center;}
+.main_body ._personal form ._code ._show{float:left;width:106px;height:36px;line-height:36px;text-align:center;font-size:18px;color:#000;margin-left:6px;background:#ccc;cursor:pointer;}
+.main_body ._personal form ._code ._tab{float:left;width:86px;height:36px;margin-left:6px;color:#565656;line-height:36px;}
+.main_body ._personal form ._code ._tab a{color:#6e9b0c;}
+.main_body ._personal form ._agreement input{float:left;width:13px;height:13px;margin:13px 5px 0 0;}
+.main_body ._personal form ._agreement a{float:left;height:12px;margin-top:12px;color:#565656;}
+.main_body ._personal form ._agreement a ._contract{color:#6e9b0c;}
+.main_body ._personal form ._agreement ._prompt{margin-left:18px;}
+.main_body ._personal form ._agreement a:hover{text-decoration:underline;}
+.main_body ._personal form ._submit a{display:block;width:271px;height:38px;font-size:16px;line-height:38px;text-align:center;color:#fff;background:url(../img/btn_bg.jpg) no-repeat left top;}
+.main_body ._business{display:none;}
+.main_body ._business p{color:red;}

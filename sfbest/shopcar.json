@@ -1,0 +1,20 @@
+{
+    "data":[
+        {"id":"8","simg":"img/kuguas1.jpg","name":"加利利 苦瓜 400g","price":"8.5","weight":"0.4","stock":"现货"
+        },
+		{"id":"1","simg":"img/qiyiguos1.jpg","name":"佳沛zespri 绿奇异果 12粒","price":"29.9","weight":"1.5","stock":"现货"
+        },
+		{"id":"2","simg":"img/rouchengs1.jpg","name":"南非红肉橙1200g（6粒装）","price":"29.9","weight":"1.2","stock":"现货"
+        },
+		{"id":"3","simg":"img/huolongguos1.jpg","name":"红肉火龙果1000g（2个装）","price":"19.9","weight":"1","stock":"现货"
+        },
+		{"id":"4","simg":"img/zhilis1.jpg","name":"智利绿奇异果3.3kg","price":"59.9","weight":"3.3","stock":"现货"
+        },
+		{"id":"5","simg":"img/hongxins1.jpg","name":"越南红心火龙果2.5kg","price":"49.9","weight":"2.5","stock":"现货"
+        },
+		{"id":"6","simg":"img/huangtaos1.jpg","name":"嘉善锦绣黄桃2.5kg","price":"89","weight":"2.5","stock":"现货"
+        },
+		{"id":"7","simg":"img/xihulus1.jpg","name":"加利利 西葫芦250g","price":"6.5","weight":"0.25","stock":"现货"
+        }
+    ]
+}

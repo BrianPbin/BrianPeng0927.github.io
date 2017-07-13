@@ -1,0 +1,60 @@
+{
+    "data":[
+        {"id":"8","name":["生鲜食品","蔬菜","根茎•瓜类","加利利","加利利 苦瓜 400g"],
+            "simg":["img/kuguas1.jpg","img/kuguas2.jpg","img/kuguas3.jpg","img/kuguas4.jpg","img/kuguas5.jpg","img/kuguas6.jpg","img/kuguas7.jpg","img/kuguas8.jpg","img/kuguas9.jpg","img/kuguas10.jpg","img/kuguas11.jpg","img/kuguas12.jpg"],
+            "mimg":["img/kuguam1.jpg","img/kuguam2.jpg","img/kuguam3.jpg","img/kuguam4.jpg","img/kuguam5.jpg","img/kuguam6.jpg","img/kuguam7.jpg","img/kuguam8.jpg","img/kuguam9.jpg","img/kuguam10.jpg","img/kuguam11.jpg","img/kuguam12.jpg"],
+            "bimg":["img/kuguab1.jpg","img/kuguab2.jpg","img/kuguab3.jpg","img/kuguab4.jpg","img/kuguab5.jpg","img/kuguab6.jpg","img/kuguab7.jpg","img/kuguab8.jpg","img/kuguab9.jpg","img/kuguab10.jpg","img/kuguab11.jpg","img/kuguab12.jpg"],
+            "price":["8",".5"],"status":"1","brand":"加利利","producearea":"中国","format":"400g","weight":"0.4kg （含包装）","num":"1800029078","unit":"盒","infoh2":"img/h2list.gif",
+            "infolist":["img/productinfo1.jpg","img/productinfo2.jpg","img/productinfo3.jpg","img/productinfo4.jpg","img/productinfo5.jpg","img/productinfo6.jpg","img/productinfo7.jpg","img/productinfo8.jpg","img/productinfo9.jpg","img/productinfo10.jpg","img/productinfo11.jpg","img/productinfo12.jpg"]
+        },
+        {"id":"7","name":["生鲜食品","蔬菜","根茎•瓜类","加利利","加利利 西葫芦 250g"],
+            "simg":["img/xihulus1.jpg","img/xihulus2.jpg","img/xihulus3.jpg","img/xihulus4.jpg","img/xihulus5.jpg","img/xihulus6.jpg"],
+            "mimg":["img/xihulum1.jpg","img/xihulum2.jpg","img/xihulum3.jpg","img/xihulum4.jpg","img/xihulum5.jpg","img/xihulum6.jpg"],
+            "bimg":["img/xihulub1.jpg","img/xihulub2.jpg","img/xihulub3.jpg","img/xihulub4.jpg","img/xihulub5.jpg","img/xihulub6.jpg"],
+            "price":["6",".5"],"status":"1","brand":"加利利","producearea":"中国","format":"250g","weight":"0.25kg （含包装）","num":"1800145142","unit":"盒","infoh2":"img/h2list.gif",
+            "infolist":["img/productinfo1.jpg","img/productinfo2.jpg","img/productinfo3.jpg","img/productinfo4.jpg","img/productinfo5.jpg","img/productinfo6.jpg","img/productinfo7.jpg","img/productinfo8.jpg","img/productinfo9.jpg","img/productinfo10.jpg","img/productinfo11.jpg","img/productinfo12.jpg"]
+        },
+        {"id":"6","name":["生鲜食品","水果","桃/李/杏","果郡王","果郡王 嘉善锦绣黄桃12只 2.5kg 单果200~250g 200g*12个"],
+            "simg":["img/huangtaos1.jpg","img/huangtaos2.jpg","img/huangtaos3.jpg","img/huangtaos4.jpg","img/huangtaos5.jpg"],
+            "mimg":["img/huangtaom1.jpg","img/huangtaom2.jpg","img/huangtaom3.jpg","img/huangtaom4.jpg","img/huangtaom5.jpg"],
+            "bimg":["img/huangtaob1.jpg","img/huangtaob2.jpg","img/huangtaob3.jpg","img/huangtaob4.jpg","img/huangtaob5.jpg"],
+            "price":["89",""],"status":"1","brand":"果郡王","producearea":"中国","format":"200g*12个","weight":"2.5kg （含包装）","num":"1800217573","infoh2":"img/h2list.gif",
+            "infolist":["img/productinfo1.jpg","img/productinfo2.jpg","img/productinfo3.jpg","img/productinfo4.jpg","img/productinfo5.jpg","img/productinfo6.jpg","img/productinfo7.jpg","img/productinfo8.jpg","img/productinfo9.jpg","img/productinfo10.jpg","img/productinfo11.jpg","img/productinfo12.jpg"]
+        },
+        {"id":"5","name":["生鲜食品","水果","火龙果","果郡王","果郡王 越南红心火龙果5斤 2.5kg"],
+            "simg":["img/hongxins1.jpg","img/hongxins2.jpg","img/hongxins3.jpg","img/hongxins4.jpg"],
+            "mimg":["img/hongxinm1.jpg","img/hongxinm2.jpg","img/hongxinm3.jpg","img/hongxinm4.jpg"],
+            "bimg":["img/hongxinb1.jpg","img/hongxinb2.jpg","img/hongxinb3.jpg","img/hongxinb4.jpg"],
+            "price":["49",".9"],"status":"1","brand":"果郡王","producearea":"越南","format":"200g*12个","weight":"2.5kg （含包装）","num":"1800201331","unit":"千克","infoh2":"img/h2list.gif",
+            "infolist":["img/productinfo1.jpg","img/productinfo2.jpg","img/productinfo3.jpg","img/productinfo4.jpg","img/productinfo5.jpg","img/productinfo6.jpg","img/productinfo7.jpg","img/productinfo8.jpg","img/productinfo9.jpg","img/productinfo10.jpg","img/productinfo11.jpg","img/productinfo12.jpg"]
+        },
+        {"id":"4","name":["生鲜食品","水果","奇异果/猕猴桃","果郡王","果郡王 智利绿奇异果 25~30个原箱装(随机发货) 3.3kg左右 3.3kg"],
+            "simg":["img/zhilis1.jpg","img/zhilis2.jpg","img/zhilis3.jpg","img/zhilis4.jpg","img/zhilis5.jpg"],
+            "mimg":["img/zhilim1.jpg","img/zhilim2.jpg","img/zhilim3.jpg","img/zhilim4.jpg","img/zhilim5.jpg"],
+            "bimg":["img/zhilib1.jpg","img/zhilib2.jpg","img/zhilib3.jpg","img/zhilib4.jpg","img/zhilib5.jpg"],
+            "price":["59",".9"],"status":"1","brand":"果郡王","producearea":"智力","format":"3.3kg","weight":"3.3kg （含包装）","num":"1800216421","infoh2":"img/h2list.gif",
+            "infolist":["img/productinfo1.jpg","img/productinfo2.jpg","img/productinfo3.jpg","img/productinfo4.jpg","img/productinfo5.jpg","img/productinfo6.jpg","img/productinfo7.jpg","img/productinfo8.jpg","img/productinfo9.jpg","img/productinfo10.jpg","img/productinfo11.jpg","img/productinfo12.jpg"]
+        },
+        {"id":"3","name":["生鲜食品","水果","火龙果","鑫荣懋","红肉火龙果1000g（2个装）"],
+            "simg":["img/huolongguos1.jpg","img/huolongguos2.jpg","img/huolongguos3.jpg","img/huolongguos4.jpg","img/huolongguos5.jpg","img/huolongguos6.jpg"],
+            "mimg":["img/huolongguom1.jpg","img/huolongguom2.jpg","img/huolongguom3.jpg","img/huolongguom4.jpg","img/huolongguom5.jpg","img/huolongguom6.jpg"],
+            "bimg":["img/huolongguob1.jpg","img/huolongguob2.jpg","img/huolongguob3.jpg","img/huolongguob4.jpg","img/huolongguob5.jpg","img/huolongguob6.jpg"],
+            "price":["19",".9"],"status":"1","brand":"鑫荣懋","producearea":"越南","weight":"1.1kg （含包装）","num":"1800215383","unit":"盒","infoh2":"img/h2list.gif",
+            "infolist":["img/productinfo1.jpg","img/productinfo2.jpg","img/productinfo3.jpg","img/productinfo4.jpg","img/productinfo5.jpg","img/productinfo6.jpg","img/productinfo7.jpg","img/productinfo8.jpg","img/productinfo9.jpg","img/productinfo10.jpg","img/productinfo11.jpg","img/productinfo12.jpg"]
+        },
+        {"id":"2","name":["生鲜食品","水果","橙类","其他","南非红肉橙1200g（6粒装）"],
+            "simg":["img/rouchengs1.jpg","img/rouchengs2.jpg","img/rouchengs3.jpg","img/rouchengs4.jpg","img/rouchengs5.jpg"],
+            "mimg":["img/rouchengm1.jpg","img/rouchengm2.jpg","img/rouchengm3.jpg","img/rouchengm4.jpg","img/rouchengm5.jpg"],
+            "bimg":["img/rouchengb1.jpg","img/rouchengb2.jpg","img/rouchengb3.jpg","img/rouchengb4.jpg","img/rouchengb5.jpg"],
+            "price":["29",".9"],"status":"1","producearea":"南非","weight":"1.2kg （含包装）","num":"1800218007","unit":"盒","infoh2":"img/h2list.gif",
+            "infolist":["img/productinfo1.jpg","img/productinfo2.jpg","img/productinfo3.jpg","img/productinfo4.jpg","img/productinfo5.jpg","img/productinfo6.jpg","img/productinfo7.jpg","img/productinfo8.jpg","img/productinfo9.jpg","img/productinfo10.jpg","img/productinfo11.jpg","img/productinfo12.jpg"]
+        },
+        {"id":"1","name":["生鲜食品","水果","奇异果/猕猴桃","佳沛 zespri","佳沛 新西兰绿奇异果12粒"],
+            "simg":["img/qiyiguos1.jpg","img/qiyiguos2.jpg","img/qiyiguos3.jpg","img/qiyiguos4.jpg","img/qiyiguos5.jpg","img/qiyiguos6.jpg","img/qiyiguos7.jpg","img/qiyiguos8.jpg"],
+            "mimg":["img/qiyiguom1.jpg","img/qiyiguom2.jpg","img/qiyiguom3.jpg","img/qiyiguom4.jpg","img/qiyiguom5.jpg","img/qiyiguom6.jpg","img/qiyiguom7.jpg","img/qiyiguom8.jpg"],
+            "bimg":["img/qiyiguob1.jpg","img/qiyiguob2.jpg","img/qiyiguob3.jpg","img/qiyiguob4.jpg","img/qiyiguob5.jpg","img/qiyiguob6.jpg","img/qiyiguob7.jpg","img/qiyiguob8.jpg"],
+            "price":["29",".9"],"status":"1","brand":"佳沛 zespri","producearea":"新西兰","weight":"1kg （含包装）","num":"1800231767","unit":"盒","infoh2":"img/h2list.gif",
+            "infolist":["img/productinfo1.jpg","img/productinfo2.jpg","img/productinfo3.jpg","img/productinfo4.jpg","img/productinfo5.jpg","img/productinfo6.jpg","img/productinfo7.jpg","img/productinfo8.jpg","img/productinfo9.jpg","img/productinfo10.jpg","img/productinfo11.jpg","img/productinfo12.jpg"]
+        }
+    ]
+}

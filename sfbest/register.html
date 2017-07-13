@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="css/common2.css" />
+    <link rel="stylesheet" type="text/css" href="css/register.css" />
+</head>
+<body>
+<!--header-->
+<div id="header">
+    <div class="header_con common">
+        <a href="index.html">
+            <img  class="logo" src="img/logo.png" />
+            <span class="logo_txt">欢迎注册</span>
+        </a>
+    </div>
+</div>
+<!--main-->
+<div id="main">
+    <div class="main_con common">
+        <div class="main_top">
+            <ul class="_user">
+                <li class="_select">个人用户</li>
+                <li class="_unselect">企业用户</li>
+            </ul>
+            <p>已有账号，立即<a href="login.html">登录</a></p>
+        </div>
+        <div class="main_body">
+            <div class="_personal">
+                <form>
+                    <div class="_user">
+                        <label for="username">
+                            <span class="warm">*</span>
+                            <span> 账户名：</span>
+                        </label>
+                        <span class="input_con">
+                            <input  id="username" type="text" />
+                            <em></em>
+                        </span>
+                        <p class="_prompt">请输入手机号码</p>
+                    </div>
+                    <div class="_password">
+                        <label for="password">
+                            <span class="warm">*</span>
+                            <span> 登录密码：</span>
+                        </label>
+                        <span class="input_con">
+                            <input id="password" type="password" />
+                            <em></em>
+                        </span>
+                        <p class="_prompt">6-20位字符，可使用字母、数字、下划线。不建议使用纯数字或字母组合。</p>
+                    </div>
+                    <div class="_rank">
+                        <p>安全程度：</p>
+                        <span>弱</span>
+                        <span>中</span>
+                        <span>强</span>
+                    </div>
+                    <div class="_confirm">
+                        <label for="confirm">
+                            <span class="warm">*</span>
+                            <span> 确认密码：</span>
+                        </label>
+                        <span class="input_con">
+                            <input id="confirm" type="password" />
+                            <em></em>
+                        </span>
+                        <p class="_prompt"></p>
+                    </div>
+                    <div class="_code">
+                        <label for="code">
+                            <span class="warm">*</span>
+                            <span> 验证码：</span>
+                        </label>
+                        <span class="input_con">
+                            <input id="code" type="text" />
+                            <em></em>
+                        </span>
+                        <span class="_show"></span>
+                        <span class="_tab">看不清？<a href="#">换一换</a></span>
+                        <p class="_prompt"></p>
+                    </div>
+                    <div class="_sms">
+                        <label for="sms">
+                            <span class="warm">*</span>
+                            <span> 短信验证码：</span>
+                        </label>
+                        <span class="input_con">
+                            <input  id="sms" type="text" />
+                            <em></em>
+                        </span>
+                        <p class="_prompt">请输入手机号码</p>
+                    </div>
+                    <div class="_agreement">
+                        <input type="checkbox" checked="" />
+                            <a href="#">
+                                我已阅读并同意
+                                <span class="_contract">《顺丰优选用户注册协议》</span>
+                            </a>
+                        <p class="_prompt">请阅读并同意注册协议</p>
+                    </div>
+                    <div class="_submit">
+                        <a href="#">立即注册
+                            <input type="hidden" />
+                        </a>
+                    </div>
+                    <br />
+                    <br />
+                </form>
+                <div class="konw_more">
+                    <a href="#">了解更多>></a>
+                </div>
+            </div>
+            <div class="_business">
+                <p>企业用户注册维护中，暂时不可用</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<div id="footer">
+    <div class="footer_con common">
+        <p class="_link">
+            <a href="#">关于我们&nbsp;</a>|
+            <a href="#">联系我们&nbsp;</a>|
+            <a href="#">招聘人才&nbsp;</a>|
+            <a href="#">友情链接&nbsp;</a>|
+            <a href="#">供应商申请&nbsp;</a>
+        </p>
+        <p>北京顺丰电子商务有限公司</p>
+        <p> 北京市公安局顺义分局备案11011302000890号|
+            <a href="#">京ICP备12011349号</a>|
+            <a href="#">企业营业执照</a>
+        </p>
+        <p> Copyright© 顺丰优选 sfbest.com 版权所有</p>
+    </div>
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/cookie.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

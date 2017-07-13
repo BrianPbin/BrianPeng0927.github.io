@@ -1,0 +1,10 @@
+node_modules
+.idea
+.DS_Store
+src/.rev
+*.swp
+#/gulpfile.js
+/*.tar*
+deploy.test.sh
+.DS_Store
+.project

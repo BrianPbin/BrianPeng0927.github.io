@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0;}
+body{color:#666;font:12px/150% Arial,Verdana,"宋体";background:#fff;
+min-width:1200px}
+a{text-decoration:none;} 
+em{font-style:normal;}
+li{list-style:none;}
+img{border:0;vertical-align:middle;display: block;} 
+table{border-collapse:collapse;border-spacing:0;}
+p{word-wrap:break-word;}
+.main{width:1200px;margin:0 auto;}
+
+#rightSide{width:44px;height:200px;position:fixed;right:10px;bottom:20px;}
+#rightSide .side_show{width:44px;height:194px;}
+#rightSide .side_btn{width:44px;height:44px;margin-top:6px;}
+#rightSide .side_btn a{display:block;width:42px;height:42px;border:1px solid #dadada;opacity:0.8;background:url(../images/rightList.png) no-repeat;}
+#rightSide .btn_shopcar a{background-position:0 -45px;}
+#rightSide .btn_foot a{background-position:-42px -82px;}
+#rightSide .btn_app a{background-position:-42px -40px;}
+#rightSide .to_top a{background-position:0 -82px;}
+#rightSide .btn_shopcar span{display:none;color:#fff;width:36px;height:20px;line-height:20px;text-align:center;background:#FA9600;position:absolute;top:-5px;right:-9px;border-radius:10px;}
+#rightSide .side_hide{width:44px;position:relative;}
+#rightSide .side_hide .cart_app{width:372px;height:178px;position:absolute;right:44px;bottom:0;overflow:hidden;display:none;}
+#rightSide .side_hide .cart_app .app_client{width:360px;height:156px;position:relative;padding-top:20px;border:1px solid #dadada;background:#fff;right:-101%;}
+#rightSide .side_hide .cart_app .app_client_top{width:310px;height:116px;margin:0 0 10px 50px;position:relative;}
+.app_client_top span{display:block;width:115px;height:116px;background:url(../images/rightside2.png) no-repeat 0 -210px;}
+.app_client_top i{display:block;width:50px;height:29px;position:absolute;left:135px;top:20px;background:url(../images/header.png) no-repeat -73px -93px;}
+.app_client_top ._txt{position:absolute;left:145px;top:54px;}
+.app_client_top ._txt em{display:block;line-height:20px;}
+.app_client_top ._txt strong{line-height:20px;color:#76ac25;font-weight:800;}
+.app_client_top ._point{width:8px;height:15px;position:absolute;right:-8px;bottom:33px;background:url(../images/rightList.png) no-repeat -88px -88px;}
+.app_client_bottom{height:30px;line-height:30px;text-align:center;background:#fcfbe4 url(../images/rightside2.png) no-repeat -116px -210px;}
+.cart_history{width:372px;position:absolute;right:44px;bottom:0;overflow:hidden;display:none;}
+.cart_history .histroy_save{width:360px;position:relative;border:1px solid #dadada;background:#fff;right:-101%;}
+.cart_history .histroy_save .histroy_save_top{text-align:center;color:#000;padding:10px;border-bottom:1px solid #1B6146;}
+.cart_history .histroy_save .histroy_save_bottom{padding:10px;width:340px;line-height:20px;}
+.cart_history .histroy_save .histroy_save_bottom .save_detial{max-height:260px;}
+.cart_history .histroy_save .histroy_save_bottom .save_detial li{padding:12px 0;height:40px;border-bottom:1px dashed #ccc;color:#565656;line-height:18px;}
+.cart_history .histroy_save ._point{margin-left:-1px;width:8px;height:15px;position:absolute;right:-8px;bottom:110px;background:url(../images/rightList.png) no-repeat -88px -88px;}
+.side_hide .cart_shop{width:372px;position:absolute;right:44px;bottom:152px;overflow:hidden;display:none;}
+.side_hide .cart_shop .shopCar_list{width:360px;position:relative;border:1px solid #dadada;background:#fff;right:-101%;}
+.side_hide .cart_shop .shopCar_list .shopCar_list_top{height:48px;text-align:center;color:#000;display:none;}
+.side_hide .cart_shop .shopCar_list .shopCar_list_top p{height:18px;padding-left:25px;display:inline-block;margin-top:20px;background:url(../images/rightList.png) no-repeat -88px -39px;}
+.side_hide .cart_shop .shopCar_list .shopCar_list_top p .add_one{color:#EA5404;}
+.side_hide .cart_shop .shopCar_list .shopCar_list_bottom{padding:10px;width:340px;line-height:20px;}
+.side_hide .cart_shop .shopCar_list .shopCar_list_bottom .shop_detial{padding:10px 0;}
+.shopCar_list_bottom .shop_detial ._none{width:240px;height:42px;margin-left:85px;background:url(../images/header.png) no-repeat -99px -123px;}
+.shopCar_list_bottom .shop_detial ._none p{padding-left:50px;}
+.shopCar_list_bottom .shop_detial ._none p span{color:#969696;}
+.shopCar_list_bottom .shop_detial ._none p span a{color:#669900;}
+.side_hide .cart_shop ._point{width:8px;height:15px;margin-left:-1px;position:absolute;right:-8px;bottom:10px;background:url(../images/rightList.png) no-repeat -88px -88px;}
+
+
