@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="注册页面.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<style>
+*{margin:0;padding:0;}
+#box{width:444px;height:428px;background:#444;color:#fff;position:absolute;overflow:hidden;}
+#show{width:230px;height:24px;line-height:24px;border:1px solid #7e7e7e;background:#ffffcc;margin-left:110px;margin-top:10px;display:none;color:#000;text-align:center;}
+#content{position:absolute;top:64px;}
+h2{color:#09C;margin-left:55px;margin-top:5px;}
+p{margin-left:100px;}
+p span{float:left;background:#fff;width:46px;height:18px;border:1px solid #b8b8b8;line-height:18px;text-align:center;}
+#test{display:block;background:#fff;width:70px;height:20px;border:1px solid #b8b8b8;line-height:18px;text-align:center;color:#000;margin-left:155px;}
+</style>
+</head>
+
+<body>
+<div id="box">
+	注意：*为必填
+	<form>
+    	<p id="show"></p>
+    	<div id="content">
+        <h2>账户详细资料*</h2>
+    	<p>用户名称*<input type="text" placeholder="请输入用户名" /></p>
+        <p>登录密码*<input type="password" placeholder="请输入密码" /></p>
+        <p>重复登录密码*<input type="password" placeholder="重复登录密码" /></p>
+        <p>
+        密码级别
+        <span></span>
+        <span></span>
+        <span></span>
+        </p>
+        <h2>个人信息资料</h2>
+        <p>电子邮件*<input type="text" placeholder="电子邮件" /></p>
+        <p>真实姓名*<input type="text" placeholder="真实姓名" /></p>
+        <p>中奖通知手机*<input type="text" placeholder="输入中奖通知手机" /></p>
+        <p>验证码*<input type="text" placeholder="输入验证码" /></p>
+        <span id="test">点击获取</span>
+        <p><input type="submit" value="注册" /></p>
+        <p><input type="checkbox" />10天内免登录</p>
+        </div>
+    </form>
+</div>
+</body>
+</html>

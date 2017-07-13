@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script type="text/javascript">
+	/*
+		打印菱形 i表示行 j表示空格 j表示*号
+	*/
+	var a=prompt('请输入菱形边长');
+	for(var i=1;i<=a;i++){
+		for(var j=1;j<=a-i;j++){
+			document.write('&nbsp;');
+		}
+		for(var j=1;j<=2*i-1;j++){
+			document.write('*');
+		}
+		document.write('<br>');	
+	}
+    //分上下两个三角形打印
+	for(var i=1;i<=a-1;i++){
+		for(var j=1;j<=i;j++){
+			document.write('&nbsp;');
+		}
+		for(var j=1;j<=2*a-2*i-1;j++){//j<=2*a-2*i-1规律自寻
+			document.write('*');
+		}
+		document.write('<br>')
+	}
+</script>
+</body>
+</html>

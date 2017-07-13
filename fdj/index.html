@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>放大镜特效</title>
+<style>
+*{margin:0;padding:0;}
+#box{width:330px;height:330px;background:#ccc;position:relative;margin:20px 200px;}
+#middle_view{width:330px;height:330px;position:relative;}
+#middle_view .fdj{width:206px;height:136px;position:absolute;background:#fff;opacity:0.5;display:none;left:0;top:0;}
+#big_view{width:502px;height:332px;position:absolute;overflow:hidden;left:400px;top:0;display:none;}
+#big_view img{position:absolute;}
+</style>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+	$(function(){
+		$("#middle_view").on("mouseover",function(){
+			$(this).find(".fdj").show();
+			$("#big_view").show();
+			$(this).on("mousemove",function(evt){
+				var e=evt||window.event;
+                var _left= e.clientX-$("#middle_view .fdj").width()/2-$(this).offset().left;
+                var _top= e.clientY-$("#middle_view .fdj").height()/2-$(this).offset().top;
+				console.log($("#middle_view .fdj").width());
+				if(_left<0){
+                    _left=0;
+                }else if(_left>$(this).width()-$("#middle_view .fdj").width()){
+					_left=$(this).width()-$("#middle_view .fdj").width();
+                }
+                if(_top<0){
+                    _top=0;
+                }else if(_top>$(this).height()-$("#middle_view .fdj").height()){
+                    _top=$(this).height()-$("#middle_view .fdj").height();
+                }
+                $("#middle_view .fdj").css({"left":_left,"top":_top});
+				var scaleX=$("#big_view img").width()/$("#middle_view").width();
+				var scaleY=$("#big_view img").height()/$("#middle_view").height();
+				$("#big_view img").css({"left":-scaleX*_left+"px","top":-scaleY*_top+"px"})
+            });
+			$(this).on("mouseout",function(){
+				$(this).find(".fdj").hide();
+				$("#big_view").hide();
+			})
+		})
+	})
+</script>
+
+</head>
+
+<body>
+<div id="box">
+	<div id="middle_view">
+		<div class="mImg">
+			<img src="img/huangtaom1.jpg" />
+		</div>
+		<div class="fdj"></div>
+	</div>
+	<div id="big_view">
+		<img src="img/huangtaob1.jpg" />
+	</div>
+</div>	
+</body>
+</html>
+

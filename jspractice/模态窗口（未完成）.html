@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul,li{list-style: none;}
+        a{text-decoration: none;}
+        body,html{height:100%;width:100%}
+        body{background:#006c6c;}
+        #box1{width: 680px;height: 709px;background: #006c6c;position:absolute;left:400px;top:50px;z-index:0;}
+        #box1 button{height: 28px;width: 88px;background:purple;border: 1px solid #5d5d5b;margin-left: 328px;margin-top: 10px;color:#b3b3b3; }
+        #box1 ul{width: 400px;margin-left: 173px;}
+        #box1 ul li{width:369px;height: 110px;border: 1px solid #000;margin-top: 10px;background: #fff;font-size:16px;line-height: 22px;padding:10px 19px 0 10px;overflow:hidden;}
+        #box3{display:none;height:100%;width:100%;position:absolute;z-index:1}
+        #box2{width:500px;height: 280px;background:#fff;position: absolute;left:500px;top:100px;}
+        #box2 .top{height:40px;width: 500px;background: #999900;line-height: 40px;}
+        #box2 .top a{float: right;font-size: 16px;color: #000;margin-right: 20px;height:40px;width:35px;}
+        #box2 .bottom{height:240px;width: 500px;}
+        #box2 .bottom h2{height:23px;width:500px;font-size: 18px;line-height: 25px;}
+        #box2 .bottom textarea{height: 160px;width: 480px;color:#000;font-size:16px;border: 1px solid #ffa500;margin-left: 11px;}
+        #box2 .bottom button{width: 200px;height: 35px;background: #009900;color: #fff;font-size: 16px;margin-left: 150px;margin-top: 6px;}
+    </style>
+    <script>
+        onload=function(){
+            var btns=document.getElementsByTagName("button");
+            var box2=document.getElementById("box2");
+            var box3=document.getElementById("box3");
+            var top=document.getElementsByClassName("top")[0];
+            var close=document.getElementsByClassName("close")[0];
+            var textarea=document.getElementsByTagName("textarea")[0];
+            var ul=document.getElementsByTagName("ul")[0];
+            //点击发布按钮弹出一个子窗口
+            btns[0].onclick=function(){
+                box3.style.display="block";
+                textarea.value="";
+                box2.style.left="500px";
+                box2.style.top="100px";
+            };
+            //该窗口要有标题栏，鼠标按住标题栏可以拖动
+            top.onmousedown=function(evt){
+                var e=evt||window.event;
+                    x= e.offsetX;
+                    y= e.offsetY;
+                document.onmousemove=function(evt){
+                    var e=evt||window.event;
+                    box2.style.left= e.clientX-x+"px";
+                    box2.style.top= e.clientY-y+"px";
+                };
+                top.onmouseup=function(){
+                    document.onmousemove=null;
+                }
+            }
+            //窗口右上角要有关闭按钮，点击关闭窗口
+            close.onclick=function(){
+                box3.style.display="none";
+            };
+            //输入内容后点击确定，关闭弹出窗口和遮罩层，将输入框中的内容追加到帖子列表中(新建一个节点li)
+            btns[1].onclick=function(){
+                if(textarea.value.length!=0){
+                    if(textarea.value.length>150){
+                        alert("发布字数不得超过150个字");
+                    }else{
+                        var li=document.createElement("li");
+                        li.innerHTML=textarea.value;
+                        ul.insertBefore(li,ul.children[0]);
+                        box3.style.display="none";
+                    }
+                }else{
+                    box3.style.display="none";
+                }
+            };
+            //发布字数不得超过150个字, 如果超过150字则点击确定按钮弹出警告框
+            //窗口底部要有半透明的遮罩层，使得主页面暂时无法操作
+        }
+    </script>
+</head>
+<body>
+    <div id="box1">
+        <button>发布</button>
+        <ul>
+            <li class="first">5)根据密码的复杂程度不同，显示密码的安全级别（低[红色]、中[橙色]、高[绿色]）, 其中低级别为:密码长度在6-10, 中级别为:密码长度11-15, 高级别为:密码长度16-20，安全级别根据登录密码的不同而变化。且密码长度在6-20位之间</li>
+            <li>5)根据密码的复杂程度不同，显示密码的安全级别（低[红色]、中[橙色]、高[绿色]）, 其中低级别为:密码长度在6-10, 中级别为:密码长度11-15, 高级别为:密码长度16-20，安全级别根据登录密码的不同而变化。且密码长度在6-20位之间</li>
+        </ul>
+    </div>
+    <div id="box3">
+        <div id="box2">
+            <div class="top"><a class="close" href="#">关闭</a></div>
+            <div class="bottom">
+                <h2>请输入你想要输入的文字：</h2>
+                <textarea></textarea>
+                <button>确定</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

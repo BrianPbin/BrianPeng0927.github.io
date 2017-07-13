@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        table{border:1px solid #0047e1;width:200px;height:200px;text-align:center;table-layout:fixed;}
+        td{border:1px solid #ccc;}
+    </style>
+    <script src="cookie操作.js"></script>
+    <script>
+        onload=function(){
+            var tab=document.getElementsByTagName("table")[0];
+            var arr=getAllCookie();//调用封包，获取所有保存购物信息的cookie。[[水果1,5],[水果2,3],[水果3,7]]
+            for(var i=0;i<=arr.length-1;i++){//将购物信息获取显示到新建行中
+                var row=tab.insertRow(i+1);
+                row.insertCell(0).innerHTML=arr[i][0];
+                row.insertCell(1).innerHTML=arr[i][1];
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <caption>购物车</caption>
+        <tr>
+            <td>商品</td>
+            <td>数量</td>
+        </tr>
+    </table>
+</body>
+</html>

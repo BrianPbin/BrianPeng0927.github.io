@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+table{margin:50px auto;border:1px solid #0047e1;width:400px;height:400px;text-align:center;table-layout:fixed;}
+td{border:1px solid #ccc;}
+</style>
+<script>
+	onload=function(){
+		var btn1=document.getElementById('btn1');//获取btn1按钮
+			btn2=document.getElementsByName('btn2');// 获取btn2按钮组
+		btn1.onclick=function(){//事件，点击btn1
+			for(var i=0;i<=btn2.length-1;i++){//遍历btn2按钮组
+				btn2[i].checked=btn1.checked;//与btn1同步勾选
+			}
+		};
+		for(var i=0;i<=btn2.length-1;i++){
+			btn2[i].index=i;
+			btn2[i].onclick=function(){
+			    if(btn2[this.index].checked==false){//btn2的某个点击后为不勾选，则btn1也要改为未选
+				    btn1.checked=false;
+			    }else{//btn2的某个点击后为勾选
+				    for(var j=0;j<=btn2.length-1;j++){
+					    if(btn2[j].checked==false){//在前面前提下，还有其他btn2没有选中
+						    return;//停止循环，return返回值为空，btn1不用做处理，
+					    }else{
+						    continue;//跳过本次循环
+                        }
+				    }
+				    btn1.checked=true;//循环结束，则表示在前面前提下，其他btn2都为选中
+			    }
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+<table cellspacing="0" cellpadding="0">
+    <tbody>  
+    	<tr>
+        	<td><input id="btn1" type="checkbox" /></td>
+            <td>菜名</td>
+            <td>价格</td> 
+        </tr>     
+        <tr>
+            <td><input name="btn2" type="checkbox" /></td>
+            <td>青椒肉丝</td>
+            <td>18元</td>
+        </tr>
+        <tr>
+            <td><input name="btn2" type="checkbox" /></td>
+            <td>青椒肉丝</td>
+            <td>18元</td>
+        </tr>
+        <tr>
+            <td><input name="btn2" type="checkbox" /></td>
+            <td>青椒肉丝</td>
+            <td>18元</td>
+        </tr>
+        <tr>
+            <td><input name="btn2" type="checkbox" /></td>
+            <td>青椒肉丝</td>
+            <td>18元</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

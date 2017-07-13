@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表格增删</title>
+<style>
+table{width:400px;border:1px solid #ccc;padding:2px;text-align:center;}
+caption p{float:left;}
+th{height:30px;border:1px solid #ccc;}
+td{height:30px;border:1px solid #ccc;}
+</style>
+<script>
+	onload=function(){
+		var table=document.getElementById('table');
+		var	btn1=document.getElementById('btn1');
+		var	mz=document.getElementById('mz');
+		var	tel=document.getElementById('tel');
+		var	id=document.getElementById('id');
+		btn1.onclick=function(){//点击时
+			var length=table.rows.length;//先记录表格行长度
+			var	row=table.insertRow(length);//在行末添加一行
+				row.insertCell(0).innerHTML=mz.value;//该行添加4个单元格 内容可传
+				row.insertCell(1).innerHTML=id.value;
+				row.insertCell(2).innerHTML=tel.value;
+				row.insertCell(3).innerHTML='<button>删除</button>';
+			
+			var	but=document.getElementsByTagName('button');
+			for(var i=0;i<=but.length-1;i++){
+				but[i].onclick=function(){//点击删除按钮
+					table.deleteRow(this.parentNode.parentNode.rowIndex);//从table中删除该单元格节点对应父节点那行
+				};//rowIndex返回表格中行的序号
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+<p>
+姓名：<input id="mz" type="text" />
+电话：<input id="tel" type="text" />
+ID：<input id="id" type="text" />
+<input id="btn1" type="submit" value="提交" />
+</p>
+<table id="table">
+	<caption>
+    	<p>人员表：</p>
+    </caption>
+    <thead>
+		<tr>
+    		<th>姓名</th>
+            <th>ID</th>
+            <th>电话</th>
+            <th>操作</th>
+        </tr>
+    </thead>    
+</table>
+</body>
+</html>

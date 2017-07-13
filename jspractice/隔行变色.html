@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+table{height:500px;width:600px;margin:0 auto;border:1px solid #ccc;table-layout:fixed;border-collapse:collapse;text-align:center;}
+tr{border:1px solid #ccc;background:yellow;cursor:pointer;}
+tr:nth-child(even){background:#fef0f5;}
+.show{background:red;}
+</style>
+<script type="text/javascript">
+	onload=function(){
+		var tdsArr=document.getElementsByTagName('td');
+		for(var i=0;i<=tdsArr.length-1;i++){
+			tdsArr[i].count=i;
+			tdsArr[i].onclick=function(){//点击时修改class名，来实现改变属性效果
+				for(var j=0;j<=tdsArr.length-1;j++){
+					tdsArr[j].className="";
+					}
+				tdsArr[this.count].className="show";
+				}
+			}
+		}	
+</script>
+</head>
+
+<body>
+<div>
+	<table cellpadding="0" cellspacing="0">
+    	<tbody>
+        	<tr>
+            	<td>html5html5html5</td>
+            </tr>
+            <tr>
+            	<td>html5html5html5</td>
+            </tr>
+            <tr class="style2">
+            	<td>html5html5html5</td>
+            </tr>
+            <tr>
+            	<td>html5html5html5</td>
+            </tr>
+            <tr class="style2">
+            	<td>html5html5html5</td>
+            </tr>
+            <tr>
+            	<td>html5html5html5</td>
+            </tr>
+            <tr class="style2">
+            	<td>html5html5html5</td>
+            </tr>
+            <tr>
+            	<td>html5html5html5</td>
+            </tr>
+            <tr class="style2">
+            	<td>html5html5html5</td>
+            </tr>
+            <tr>
+            	<td>html5html5html5</td>
+            </tr>
+        
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

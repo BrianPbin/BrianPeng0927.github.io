@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        html,body{overflow:hidden;}
+        body{background:#000;}
+        .box{background:#fff;width:3px;height:50px;position:absolute;}
+        .fire{width:5px;height:5px;position:absolute;}
+    </style>
+    <script src="startMove.js"></script>
+    <script>
+        onload=function(){
+			document.onclick=function(evt){//点击发射
+				var e=evt||window.event;
+				var endX=e.clientX;//记录点击位置坐标
+				var endY=e.clientY;
+				var box=document.createElement("div");//创建烟火
+				box.className="box";//赋予属性
+				box.style.left=endX+"px";//烟火X坐标位置可定
+				box.style.top=document.body.clientHeight || document.documentElement.clientHeight + "px";//烟火Y坐标初始为浏览器底部
+				document.body.appendChild(box);//将烟火添加进body
+				startMove(box,{height:5,top:endY},function(){//烟火运动变化（5毛特效），height变到5，最终Y坐标为点击记录位置
+					firework(endX,endY);//回调内加入烟火散开方法
+					document.body.removeChild(box);//回调内删除烟火box
+				})
+			}
+			function firework(endX,endY){//回调-烟火散开方法
+				var count=Math.floor(Math.random()*50)+20;//随机生成烟火散开个数（20,70）
+				var arr=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];//用作加随机颜色
+				for(var i=1;i<count;i++){
+					var fire=document.createElement("div");//创建散点
+					fire.className="fire";//赋予散点属性
+					document.body.appendChild(fire);//加到body
+					fire.style.left=endX+"px";//初始坐标可定
+					fire.style.top=endY+"px";
+					fire.style.background="#"+arr[Math.floor(Math.random()*16)]+arr[Math.floor(Math.random()*16)]+arr[Math.floor(Math.random()*16)];//散点颜色随机
+                    var speedX = (Math.ceil(Math.random()*20)+1) * (Math.random()>=0.5 ? 1 : -1);//散点炸开速度方向随机
+                    var speedY = (Math.ceil(Math.random()*20)+1) * (Math.random()>=0.5 ? 1 : -1);
+                    fire.timer = setInterval((function(ele, spd){//散点炸开运动添加定时器
+                        return function(){//闭包函数  运动
+                            ele.style.left=ele.offsetLeft+spd.v+"px";
+                            ele.style.top=ele.offsetTop+spd.h++ +"px";//spd++散点若初始速度为负，运动则为先上后掉下
+                            if(ele.offsetTop >= (document.body.clientHeight || document.documentElement.clientHeight)){
+                                clearInterval(ele.timer);//掉落完毕取消定时器
+                                document.body.removeChild(ele);//移除散点
+                            }
+                        }
+                    })(fire,{v:speedX, h:speedY}), 30);//(fire,{v:speedX, h:speedY})为传参
+				}
+			}
+		}
+    </script>
+</head>
+<body>
+</body>
+</html>

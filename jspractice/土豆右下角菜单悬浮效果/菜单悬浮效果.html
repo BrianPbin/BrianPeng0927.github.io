@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        #box2{width:50px;height: 50px;background: red;float:left;position:absolute;z-index:2;}
+        #box3{width:150px;height: 40px;background: green;position:absolute;left:-100px;top:0;z-index: 1;}
+        #box4{width:200px;height: 360px;background:blue;position:absolute;left:0;top:-360px;z-index: 0;}
+        #box4 input{margin-top: 300px;margin-left: 170px;}
+    </style>
+    <script>
+        onload=function(){
+            var btns=document.getElementsByTagName("input");
+            var box3=document.getElementById("box3");
+            var box4=document.getElementById("box4");
+            var x3=-100;
+            var y4=-360;
+            btns[0].onclick=function(){
+                btns[0].disabled=true;
+                var a=setInterval(function(){
+                    x3+=5;
+                    box3.style.left=x3+"px";
+                    if(x3==50){
+                        clearInterval(a);
+                        var b=setInterval(function(){
+                            y4+=5;
+                            box4.style.top=y4+"px";
+                            if(y4==40){
+                                clearInterval(b);
+                                btns[1].disabled=false;
+                            }
+                        },10)
+                    }
+                },10)
+            }
+            btns[1].onclick=function(){
+                btns[1].disabled=true;
+                var c=setInterval(function(){
+                    y4-=5;
+                    box4.style.top=y4+"px";
+                    if(y4==-360){
+                        clearInterval(c);
+                        var d=setInterval(function(){
+                            x3-=5;
+                            box3.style.left=x3+"px";
+                            if(x3==-100){
+                                clearInterval(d);
+                                btns[0].disabled=false;
+                            }
+                        },10)
+                    }
+                },10)
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2">
+            <p>mini</p>
+            <input type="button" value="打开" />
+        </div>
+        <div id="box3">
+            <p>mini</p>
+        </div>
+        <div id="box4">
+            <p>mini</p>
+            <input type="button" value="关闭" />
+        </div>
+    </div>
+</body>
+</html>

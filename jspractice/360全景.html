@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+html,body{height:100%;}
+body {margin:0;}
+img {width:640px; height:378px; position:absolute; left:50%; top:50%; margin-top:-189px; margin-left:-320px;}
+</style>
+<script>
+	onload=function(){		
+		for(var i=1;i<=76;i++){//创建图片元素
+			var img=document.createElement("img");
+			img.src="img/"+i+".jpg";
+			img.style.display="none";	
+			document.body.appendChild(img);
+		}
+		var index=0;//当前显示图片下标
+		var lastIndex=0;//上一次显示图片下标
+		var preIndex=0;//当前显示图片的前一张下标
+		var imgs=document.getElementsByTagName("img");
+		document.onmousedown=function(evt){
+			clearInterval(a);//点下去取消自然旋转
+			var e=evt||window.event;
+			var startX=e.clientX;//鼠标起始x坐标
+			document.onmousemove=function(evt){
+				var e=evt||window.event;
+				var endX=e.clientX;//鼠标移动位置坐标
+				var dis=startX-endX;//移动距离
+				if(dis>=0){//让index赋值为0-76之间
+				//index取值是上一次显示图片的下标加上变化量
+					index=(lastIndex+Math.floor(dis/10))%77;
+				}else{
+					index=(lastIndex+(Math.floor(dis/10)%77)+77)%77;
+				}
+				imgs[preIndex].style.display="none";//前张不显示
+				imgs[index].style.display="block";//当前图片显示
+				preIndex=index;//当前下标值赋给前张
+			}
+		}
+		document.onmouseup=function(){
+			lastIndex=index;//上一次显示图片下标取值
+			document.onmousemove=null;//取消鼠标移动图片旋转
+			a=setInterval(func,70);//自然旋转	间歇		
+		}
+		var a=setInterval(func,70);//自然旋转
+			function func(){
+				imgs[index].style.display="none";//每次变化前先隐藏图片显示
+				index++;//index每次间歇取值+1
+				if(index>76){//index取值为0-76反复循环
+					index=0;
+				}
+				imgs[index].style.display="block";//index值变化后图片显示
+				lastIndex=index;//上一次显示图片下标赋值		
+			}				
+	}			
+</script>
+</head>
+
+<body>
+<img src="img/0.jpg" title="" alt="" />
+</body>
+</html>

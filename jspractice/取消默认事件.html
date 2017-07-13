@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+ul,li{list-style:none;}
+textarea{width:400px;height:400px;background:#ccc;position:absolute;}
+ul{width:80px;height:140px;border:1px solid #000;display:none;position:absolute;cursor:pointer;background:#33F;}
+li{width:80px;height:20px;border-bottom:1px solid #000;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+li:hover{background:#0F0;}
+</style>
+<script>
+	onload=function(){
+		var tex=document.getElementsByTagName('textarea')[0];
+			uls=document.getElementsByTagName('ul')[0];
+		tex.oncontextmenu=function(evt){
+			var e=evt||window.event;//event兼容
+			window.event?e.cancelBubble=true:e.stopPropagation();//取消冒泡 兼容
+			if(evt){//取消浏览器默认事件 兼容
+				e.preventDefault();
+			}else{
+				e.returnValue=false;
+			}
+			uls.style.display="block";//显示自定义菜单
+			uls.style.left=e.clientX+'px';//菜单位置
+			uls.style.top=e.clientY+'px';
+		};
+		document.onclick=function(){//左键点击取消菜单
+			uls.style.display="none";
+		};
+		document.oncontextmenu=function(){//右键点击取消菜单
+			uls.style.display="none";
+		};
+		var lis=document.getElementsByTagName('li');
+        for(var i=0;i<=lis.length-1;i++){//遍历li
+            lis[i].index=i;
+            lis[i].onclick=function(){//li点击事件
+                tex.value+=lis[this.index].innerHTML;//li里内容添加到textarea中
+            }
+        }
+	}
+</script>
+</head>
+
+<body>
+<textarea>
+</textarea>
+<ul>
+	<li>hello</li>
+    <li>你好</li>
+    <li>你好吗</li>
+    <li>握草</li>
+    <li>去年买了个表</li>
+</ul>
+</body>
+</html>

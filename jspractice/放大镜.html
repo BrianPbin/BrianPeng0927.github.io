@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #box1{margin: 50px 300px;}
+        #box1 p{float: left;margin-right: 10px;border: 1px solid #878787;}
+        #box2{position: absolute;}
+        #box2 img{display: none;border: 1px solid #878787;}
+    </style>
+    <script>
+        onload=function(){
+            var ps=document.getElementsByTagName("p");
+            var imgs=document.getElementsByClassName("fdj");
+            var box2=document.getElementById("box2");
+            for(var i=0;i<=ps.length-1;i++){
+                ps[i].index=i;
+                ps[i].onmouseover=function(){
+                    imgs[this.index].style.display="block";//鼠标覆盖时显示对应大图
+                    document.onmousemove=function(evt){
+                        var e=evt||window.event;
+                        box2.style.left= e.clientX+5+"px";//加5px防止鼠标下移或右移时鼠标移到大图上导致onmouseout事件
+                        box2.style.top= e.clientY+5+"px";//不加的话，下移和右移图片会闪
+                    }
+                }
+                ps[i].onmouseout=function(){
+                    imgs[this.index].style.display="none";//鼠标离开时隐藏对应大图
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1">
+        <p><img src="images/shirt_1.jpg" alt="" title="" /></p>
+        <p><img src="images/shirt_2.jpg" alt="" title="" /></p>
+        <p><img src="images/shirt_3.jpg" alt="" title="" /></p>
+        <p><img src="images/shirt_4.jpg" alt="" title="" /></p>
+    </div>
+    <div id="box2">
+        <img class="fdj" src="images/shirt_1_big.jpg" alt="" title="" />
+        <img class="fdj" src="images/shirt_2_big.jpg" alt="" title="" />
+        <img class="fdj" src="images/shirt_3_big.jpg" alt="" title="" />
+        <img class="fdj" src="images/shirt_4_big.jpg" alt="" title="" />
+    </div>
+
+</body>
+</html>

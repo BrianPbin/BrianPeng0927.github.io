@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        ul,li{list-style:none;}
+        img{display:block;border:0;}
+        div{overflow:hidden;width:810px;height:320px;position:relative;left:50%;margin-left:-405px;}
+        #show{position:absolute;top:0;left:0;height: 320px;}
+        #show li{position: absolute;left: 0;top:0;width:810px;}
+        #select{position:absolute;bottom:0;right:0;}
+        #select li{float:left;font-size:30px;padding-right:10px;cursor:pointer;}
+        .active{color:red;}
+    </style>
+    <script src="运动变化.js"></script>
+    <script>
+        onload=function(){
+            var div=document.getElementsByTagName("div")[0];
+            var ul=document.getElementById("show");
+            var lis=ul.getElementsByTagName("li");
+            var sel=document.getElementById("select");
+            var btns=sel.getElementsByTagName("li");
+            var now=0;
+            for(var i=0;i<btns.length;i++){
+                btns[i].index=i;
+                btns[i].onclick=function(){
+                    now=this.index;
+                    tab();
+                }
+            }
+            function tab(){
+                for(var i=0; i<btns.length; i++){
+                    if(i==now){//正在显示的图片透明度目标值变到100
+                        btns[i].className="active";
+                        move(lis[i],{opacity:100});
+                    }else{//其他透明度目标值变到0
+                        btns[i].className='';
+                        move(lis[i],{opacity:0});
+                    }
+                }
+            }
+            var a=setInterval(next,3000);
+            function next(){
+                now++;
+                if(now==btns.length){
+                    now=0;
+                }
+                tab();
+            }
+            div.onmouseout=function(){//定时器--间歇变化
+                a=setInterval(next,3000)
+            };
+            div.onmouseover=function(){
+                clearInterval(a);
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <ul id="show">
+        <li><img src="img/001.jpg"></li>
+        <li><img src="img/002.jpg"></li>
+        <li><img src="img/003.jpg"></li>
+        <li><img src="img/004.jpg"></li>
+    </ul>
+    <ul id="select">
+        <li class="active">●</li>
+        <li>●</li>
+        <li>●</li>
+        <li>●</li>
+    </ul>
+</div>
+</body>
+</html>

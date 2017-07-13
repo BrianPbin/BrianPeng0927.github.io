@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        onload=function(){
+            var user=document.getElementsByTagName("input")[0];
+            var span=document.getElementsByTagName("span")[0];
+            var reg=/^.{6,}$/ig;
+            user.onblur=function(){
+                var str=user.value;
+                if(str.match(reg)){
+                    var xhr=null;
+                    if(window.ActiveXObject){
+                        xhr=new ActiveXObject("Msxml2.XMLHTTP") || new ActiveXObject("Microsoft.XMLHTTP") ;
+                    }else{
+                        xhr=new XMLHttpRequest();
+                    }
+                    var url = "http://localhost:8080/ajaxtest01/ajaxregister?username="+user.value;
+                    xhr.open("get",url,true);
+                    xhr.send();
+                    xhr.onreadystatechange=function(){
+                        if(xhr.status==200&&xhr.readyState==4){
+                            span.innerHTML = xhr.responseText;
+                        }else{
+                            span.innerHTML="用户名不可用";
+                        }
+                    }
+                }else{
+                    span.innerHTML="用户名非法，请重新输入";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    用户名：<input type="text" /><span></span>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="ajax.js"></script>
+    <script>
+        onload=function(){
+            var ul=document.getElementsByTagName("ul")[0];
+            var btn=document.getElementsByTagName("button")[0];
+            btn.onclick=function(){
+                btn.innerHTML="no more";
+                btn.disabled=true;
+            var url="http://localhost:80/AJAX/lis.txt";//异步加载地址
+                ajax.get(url,func);//调用ajax封包
+            };
+            function func(str) {//func参数
+                //{"book":["java","ios","php",".net","c++","javascript"]}
+                var obj=eval("("+str+")");
+                var list=obj.book;//["java","ios","php",".net","c++","javascript"]
+                if(list.length>0){
+                    for(var i=0;i<list.length;i++){
+                        var li=document.createElement("li");//创建新li加入到已存在的ul中获取内容
+                        li.innerHTML=list[i];
+                        ul.appendChild(li);
+                    }
+                }else{
+                    btn.innerHTML="no more";
+                    btn.disabled=true;
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <ul>
+        <li>aaaaa</li>
+        <li>bbbbb</li>
+        <li>ccccc</li>
+    </ul>
+    <button>more</button>
+</body>
+</html>

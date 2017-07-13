@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        onload=function(){
+            var span=document.getElementsByTagName("span")[0];
+            var input=document.getElementsByTagName("input")[0];
+            input.onblur=function(){
+                var reg=/^\w{6,}$/ig;
+                var str=input.value;
+                if(str.match(reg)){
+                    var xhr=null;
+                    if(window.ActiveXObject){
+                        xhr = new ActiveXObject("Msxml2.XMLHTTP") || new ActiveXObject("Microsoft.XMLHTTP") ;
+                    }else{
+                        xhr=new XMLHttpRequest();
+                    }
+                    var url="http://localhost:8080/ajaxtest01/ajaxregister";
+                    var data="username="+input.value;
+                    xhr.open("post",url,true);
+                    //post要添加一个request的头文件
+                    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+                    xhr.send(data);
+                    xhr.onreadystatechange=function(){
+                        if(xhr.status==200&&xhr.readyState==4){
+                            span.innerHTML=xhr.responseText;
+                        }else{
+                            span.innerHTML="用户名不可用";
+                        }
+                    }
+                }else{
+                    span.innerHTML="用户名不合法";
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    用户名：<input type="text" name="username" />
+    <span></span>
+</body>
+</html>

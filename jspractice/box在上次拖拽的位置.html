@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #box{
+            width:200px;
+            height:200px;
+            background: yellow;
+            position: absolute;
+        }
+    </style>
+    <script>
+        /*
+         1 完成一个拖拽案例，第二次进入该html的时候 ，box在上次拖拽的位置
+         */
+        onload=function() {
+            var box = document.getElementById('box');
+            var d = new Date();
+            d.setDate(d.getDate() + 1);
+            function getCookie(name) {//获取cookie值方法
+                    var reg = /;\s*/ig;//去 ;空格的正则
+                    var arr = document.cookie.split(reg);//  ["user=xiaoming","pwd=123456"];
+                    for (var i = 0; i <= arr.length - 1; i++) {
+                        var arr2 = arr[i].split("=");//["user","xiaoming"]  ["pwd","123456"];
+                        if (arr2[0] == name) {//如果第二次拆分出来的数组，他的第一个元素等于我的"user"的话，就说明找到那个user了
+                            return arr2[1];//所以只要arr2[0]匹配了，就返回arr2[1];
+                        }
+                    }
+            }
+            if(getCookie("boxX")){//cookie存在的话，拿到cookie值，存储信息是上一次关闭浏览器时box坐标，直接赋值即能实现效果
+                    box.style.left = getCookie("boxX");
+                }
+            if(getCookie("boxY")){
+                    box.style.top = getCookie("boxY");
+                }
+            box.onmousedown = function (evt) {
+                var e = evt || window.evt;
+                var x = e.offsetX;
+                    y = e.offsetY;
+                document.onmousemove = function (evt) {//拖拽效果方法
+                    var e = evt || window.evt;
+                    box.style.left = e.clientX - x + 'px';
+                    box.style.top = e.clientY - y + 'px';
+                }
+            }
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.cookie = "boxX=" + box.style.left + ";expires=" + d;//cookie存储X坐标
+                document.cookie = "boxY=" + box.style.top + ";expires=" + d;//cookie存储Y坐标
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id='box'></div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+#box{width:200px;height:200px;background:#333;border:1px solid #666;position:absolute;color:#fff;}
+#nav{width:200px;height:50px;border-bottom:1px solid #666;cursor:pointer;}
+</style>
+<script>
+	onload=function(){
+		var box=document.getElementById('box');
+		var	nav=document.getElementById('nav');
+		var	btn=document.getElementsByTagName('input')[0];
+		var arr1=[];
+		var	arr2=[];
+		var	flag=false;//用作参照
+		nav.onmousedown=function(evt){
+			var e=evt||window.event;
+			var	x=e.offsetX;//鼠标坐标
+			var	y=e.offsetY;
+			document.onmousemove=function(evt){
+				var e=evt||window.event;
+				if(flag){//每次移动时 检查参照属性，如果为true则表示上次拖拽后未原路返回，上次记录的坐标已废需清除
+				    arr1=[];//清空数组存的坐标信息
+				    arr2=[];
+				    flag=false;//参照属性改变
+				}
+				box.style.left=e.clientX-x+'px';//移动时box坐标随鼠标而动，实现拖拽
+			    box.style.top=e.clientY-y+'px';
+			    arr1.push(e.clientX-x);//记录鼠标移动坐标信息
+			    arr2.push(e.clientY-y);
+			}
+		};
+		document.onmouseup=function(){//鼠标上弹起取消move事件
+			document.onmousemove=null;
+			flag=true;	//参照属性改变
+		};
+		btn.onclick=function(){//点击原路返回
+			var a=setInterval(function(){//添加定时器
+				box.style.left=arr1.pop()+'px';//每次将存储的前次移动坐标依次赋值给box，实现返回效果
+				box.style.top=arr2.pop()+'px';
+				if(arr1.length==0){//前次坐标释放完毕，box则回到上次拖拽位置，（arr1和arr2都为空了）
+				clearInterval(a);//取消定时器
+				}
+			},30)
+		};
+		btn.onmousedown=function(evt){//取消冒泡否则btn.onclick会触发nav.onmousedown事件
+			var e=evt||window.event;
+			window.event?e.cancelBubble=true:e.stopPropagation;
+		}
+	}
+</script>
+</head>
+
+<body>
+<div id="box">
+	<div id="nav">
+    	<input type="button" value="原路返回" />
+    </div>
+    <div>
+    	<p>飞块</p>
+    </div>
+</div>
+</body>
+</html>

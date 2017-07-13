@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+ul,li{list-style:none;}
+#box{margin:100px auto;width:400px;height:500px;overflow:hidden;}
+table{width:400px;height:390px;border:10px solid black;padding:10px;table-layout:fixed;}
+table td{border:5px solid #fff;background:#ccc;text-align:center;cursor:pointer;}
+ul{height:110px;}
+ul li{display:none;height:100px;background:blue;line-height:100px;text-align:center;font-size:24px;color:#fff;}
+ul .show{display:block;}
+table .current{background:blue;color:#fff;}
+</style>
+<script type="text/javascript">
+	onload=function(){
+		var tds=document.getElementsByTagName('td');
+		    lis=document.getElementsByTagName('li');
+		for(var i=0;i<=tds.length-1;i++){
+			tds[i].count=i;
+			tds[i].onclick=function(){//通过点击时改class名改变对应模块的属性
+				for(var j=0;j<=tds.length-1;j++){
+					tds[j].className='';
+					lis[j].className='';
+					}
+				tds[this.count].className='current';
+				lis[this.count].className='show';
+				}	
+			}
+		}
+
+</script>
+
+</head>
+
+<body>
+<div id="box">
+	<table cellspacing="0" cellpadding="0">
+    	<tbody>
+        	<tr>
+            	<td class="current">1月</td>
+                <td>2月</td>
+                <td>3月</td>
+                <td>4月</td>
+            </tr>
+            <tr>
+            	<td>5月</td>
+                <td>6月</td>
+                <td>7月</td>
+                <td>8月</td>
+            </tr>
+            <tr>
+            	<td>9月</td>
+                <td>10月</td>
+                <td>11月</td>
+                <td>12月</td>
+            </tr>   
+        </tbody>
+    </table>
+    <ul>
+    	<li class="show">一月好啊</li>
+        <li>二月好啊</li>
+        <li>三月好啊</li>
+        <li>四月好啊</li>
+        <li>五月好啊</li>
+        <li>六月好啊</li>
+        <li>七月好啊</li>
+        <li>八月好啊</li>
+        <li>九月好啊</li>
+        <li>十月好啊</li>
+        <li>十一月好啊</li>
+        <li>十二月好啊</li>
+    </ul>
+
+</div>
+</body>
+</html>

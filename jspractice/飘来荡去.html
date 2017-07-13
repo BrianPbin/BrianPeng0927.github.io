@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        #box{width:400px;height:400px;background:#ccc;position:relative;}
+        #boxa{border-radius:50%;width:20px;height:20px;background:red;position:absolute;left:20px;top:10px;}
+        #boxb{border-radius:50%;width:15px;height:15px;background:blue;position:absolute;left:60px;top:50px;}
+    </style>
+    <script>
+        onload=function(){
+            var box=document.getElementById("box");
+            var boxa=document.getElementById("boxa");
+            var boxb=document.getElementById("boxb");
+            var aspeedX=9;//定义垂直和水平移动速度
+            var aspeedY=5;
+            var bspeedX=-8;
+            var bspeedY=-3;
+            var ax=20;//定义初始坐标
+            var ay=10;
+            var bx=60;
+            var by=50;
+            var move=setInterval(function(){//定时器控制运动
+                ax+=aspeedX;//匀速移动变化
+                ay+=aspeedY;
+                bx+=bspeedX;
+                by+=bspeedY;
+                if(ax>380||ax<0){//碰撞水平两边，则速度变为反方向
+                    aspeedX*=-1;
+                }
+                if(ay>380||ay<0){//碰撞垂直两边，则速度变为反方向
+                    aspeedY*=-1;
+                }
+                if(bx>385||bx<0){
+                    bspeedX*=-1;
+                }
+                if(by>385||by<0){
+                    bspeedY*=-1;
+                }
+                //两方块碰撞
+//                if(bx+20==ax&&ay<by<=ay+15&&by+20>=ay){
+//                    aspeedX*=-1;
+//                    bspeedX*=-1;
+//                }else if(ax+15==bx&&by<=ay+15&&by+20>=ay){
+//                    aspeedX*=-1;
+//                    bspeedX*=-1;
+//                }else if(ay+15==by&&ax+15>=bx&&bx+20>=ax){
+//                    aspeedY*=-1;
+//                    bspeedY*=-1;
+//                }else if(by+20==ay&&ax+15>=bx&&bx+20>=ax){
+//                    aspeedY*=-1;
+//                    bspeedY*=-1;
+//                }
+                boxa.style.left=ax+"px";//left和top赋值
+                boxa.style.top=ay+"px";
+                boxb.style.left=bx+"px";
+                boxb.style.top=by+"px";
+            },50)
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <div id="boxa"></div>
+    <div id="boxb"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li{list-style: none;}
+        #div1{ position: absolute; bottom: 0px; right: 0px;}
+        #btn{ background: black;color: white; width: 50px; height: 50px; line-height: 50px; text-align: center; cursor:pointer;}
+        #list{ height: 0px; width: 50px; overflow: hidden; background: gray;}
+        #close{ text-align: right; font-size: 12px; color: white; padding-right: 5px; height: 30px; line-height: 30px; cursor: pointer;}
+        #oDiv{
+            height: 210px;
+            overflow: auto;
+            background: #CCCCCC;
+        }
+        #form{
+            padding: 10px;
+            height: 150px;
+        }
+        span{font-size: 12px; color:green;}
+        #uname{ width: 170px; height: 25px; border: 1px solid black; background:#8B8B8B ;}
+        #utext{ width: 170px; height: 50px; border: 1px solid black; background:#8B8B8B ;}
+    </style>
+    <script src="startMove.js"></script>
+    <script src="ajax.js"></script>
+    <script>
+        onload=function(){
+            var btn=document.getElementById("btn");
+            var lis=document.getElementById("list");
+            var uname=document.getElementById("uname");
+            var utext=document.getElementById("utext");
+            var oDiv=document.getElementById("oDiv");
+            var close=document.getElementById("close");
+            btn.onmouseover=function(){//鼠标覆盖时运动变化
+                startMove(btn,{width:200},function(){//回调函数在变化完成时进行
+                    lis.style.width="200px";
+                    startMove(lis,{height:400});//第二步变化
+                });
+            };
+            close.onclick=function(){//点击时运动变化
+                startMove(lis,{height:0},function(){//回调函数
+                    lis.style.width="0px";
+                    startMove(btn,{width:50});//第二步变化
+                })
+            };
+            utext.onkeyup= function (evt) {
+                var e = evt || window.event;
+                if(e.keyCode == 13){//enter键
+                    if(utext.value.length == 0 || uname.value.length == 0){//内容不能为空
+                        alert("不能为空");
+                    }else{//AJAX异步
+                        var url = "http://localhost:8080/chat?action=add&name="+uname.value+"&say="+utext.value;//异步上传地址
+                        ajax.get(url);//调用AJAX异步，无回调函数
+                        utext.value='';//输入框清空
+                    }
+                }
+            };
+            var index = 0;//用作记录加载第几条信息
+            function read(){
+                var url = "http://localhost:8080/chat?action=read&index="+index;//异步加载地址
+                function func(str){//异步回调函数
+                    var obj = eval("("+str+")");//返回str（json）用eval转成JS代码，得到对象
+                    var list =obj.list;//JSON数据转成数组形式
+                    index = obj.index;
+                    for(var i=0;i<list.length;i++){
+                        var li = document.createElement("li");
+                        li.innerHTML = list[i];//每条数据添加到新建li中
+                        li.style.overflow='hidden';
+                        oDiv.insertBefore(li,oDiv.children[0]);//在可视区添加新建的li则内容可见
+                        //li的变化设置
+                        var iHeight=li.offsetHeight;
+                        li.style.height='0px';
+                        startMove(li,{height:iHeight});
+                    }
+                }
+                ajax.get(url,func);//异步加载
+                setTimeout(read,1000);//递归的方式进行循环 调用ajax更新数据
+            }
+            read();
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <div id="list">
+        <div id="close">关闭</div>
+        <div id="oDiv"></div>
+        <div id="form">
+            昵称：<br>
+            <input type="text" id="uname" /><br>
+            内容：<br>
+            <textarea id="utext"></textarea>
+        </div>
+    </div>
+    <div id="btn">添加</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{height:2000px;}
+        div{height:30px;width:100%;background:blue;color:#fff;position:absolute;top:400px;}
+    </style>
+    <script>
+        onscroll=function(){
+            var box=document.getElementsByTagName("div")[0];
+            //scrollTop指的是“元素中的内容”超出“元素上边界”的那部分的高度。
+            var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+            if(scrollTop>400){//scrollTop大于div的top，则让div固定于顶端，形成顶部悬浮
+                box.style.position="fixed";
+                box.style.top="0";
+            }else{
+                box.style.position="absolute";
+                box.style.top="400px";
+            }
+        }
+    </script>
+</head>
+<body>
+<div>顶部悬浮</div>
+</body>
+</html>

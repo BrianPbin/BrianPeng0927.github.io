@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{width:426px;height: 3030px;border: 1px solid red}
+    </style>
+    <script>
+        /*
+         希望在 鼠标移入 div的时候 ，图片异步加载进来
+         要想异步加载，必须
+         把图片的url地址变成json数据
+         先将 图片url地址写成的json数据 放入一个txt文件，然后 异步读取出来
+         */
+        onload=function(){
+            var div = document.getElementsByTagName("div")[0];
+            var imgs = document.getElementsByTagName("img");
+            div.onmouseover = function () {
+                var url = "http://localhost:80/AJAX/img.txt";
+                var xhr=null;
+                if(window.ActiveXObject){
+                    xhr=new ActiveXObject("Msxml2.XMLHTTP") || new ActiveXObject("Microsoft.XMLHTTP") ;
+                }else{
+                    xhr=new XMLHttpRequest();
+                }
+                xhr.open("get",url,true);
+                xhr.send();
+                xhr.onreadystatechange=function() {
+                    if (xhr.status == 200 && xhr.readyState == 4) {
+                        var str = xhr.responseText;
+                    //str = "{'list':[{'url':'img/111.jpg'},{'url':'img/222.jpg'},{'url':'img/333.jpg'},{'url':'img/444.jpg'},{'url':'img/555.jpg'}]}"
+                        var obj = eval("("+str+")");
+                        var list = obj.list;
+                        for(var i=0;i<list.length;i++){
+                            imgs[i].src = list[i].url;
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img src="" />
+        <img src="" />
+        <img src="" />
+        <img src="" />
+        <img src="" />
+    </div>
+</body>
+</html>

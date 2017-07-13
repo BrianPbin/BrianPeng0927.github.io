@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        p{font-size: 16px;color: #333;}
+        span{font-size: 22px;font-weight:800;color: #000;}
+    </style>
+    <script>
+        onload=function(){
+            var p=document.getElementsByTagName("p")[0];
+            var span=document.getElementsByTagName("span");
+            var d=new Date();
+            var a=setInterval(function(){
+                d.setSeconds(d.getSeconds()+1);
+                span[0].innerHTML=Math.floor(d.getHours()/10);
+                span[1].innerHTML=Math.floor(d.getHours()%10);
+                span[2].innerHTML=Math.floor(d.getMinutes()/10);
+                span[3].innerHTML=Math.floor(d.getMinutes()%10);
+                span[4].innerHTML=Math.floor(d.getSeconds()/10);
+                span[5].innerHTML=Math.floor(d.getSeconds()%10);
+            },1000);
+
+//            var a=setInterval(function(){
+//                span[5].innerHTML=Number(span[5].innerHTML)+1;
+//                if(span[5].innerHTML==10){
+//                    span[5].innerHTML=0;
+//                    span[4].innerHTML=Number(span[4].innerHTML)+1;
+//                }
+//                if(span[4].innerHTML==6){
+//                    span[4].innerHTML=0;
+//                    span[3].innerHTML=Number(span[3].innerHTML)+1;
+//                }
+//                if(span[3].innerHTML==10){
+//                    span[3].innerHTML=0;
+//                    span[2].innerHTML=Number(span[2].innerHTML)+1;
+//                }
+//                if(span[2].innerHTML==6){
+//                    span[2].innerHTML=0;
+//                    span[1].innerHTML=Number(span[1].innerHTML)+1;
+//                }
+//                if(span[1].innerHTML==10){
+//                    span[1].innerHTML=0;
+//                    span[0].innerHTML=Number(span[0].innerHTML)+1;
+//                }
+//                if(span[0].innerHTML==2&&span[1].innerHTML==4){
+//                    span[0].innerHTML=0;
+//                    span[1].innerHTML=0;
+//                    span[2].innerHTML=0;
+//                    span[3].innerHTML=0;
+//                    span[4].innerHTML=0;
+//                    span[5].innerHTML=0;
+//                }
+//            },1000);
+        }
+
+    </script>
+</head>
+<body>
+    <p><span></span><span></span>时<span></span><span></span>分<span></span><span></span>秒</p>
+</body>
+</html>

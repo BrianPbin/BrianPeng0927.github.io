@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        onload=function(){
+            var imgs=document.getElementsByTagName("img");
+            for(var i=0;i<imgs.length;i++){
+                imgs[i].index=i;
+                imgs[i].flag = false;//用作参照
+                imgs[i].onclick=function(){
+                    for(var j=0;j<imgs.length;j++){//每次点击时，全部重新设置
+                        imgs[j].src="img/s0.png";
+                        imgs[j].flag = false;//参照属性同时修改
+                    }
+                    for(var j=0;j<=this.index;j++){//点击到第i个位置，该位置左边全部变色
+                        imgs[j].src="img/s1.png";
+                        imgs[j].flag = true;//由点击变色的flag属性全部记为true
+                    }
+                };
+                imgs[i].onmouseover=function(){//鼠标覆盖时，到第i个位置左边全部变色
+                    for(var j=0;j<=this.index;j++){
+                        imgs[j].src="img/s1.png";
+                    }
+                };
+                imgs[i].onmouseout=function(){//鼠标离开时，到第i个位置，如果flag属性为true则无变化
+                    for(var j=0;j<=this.index;j++){
+                        if(imgs[j].flag){
+                        }else{//否则变回无色
+                            imgs[j].src="img/s0.png";
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <img src="img/s0.png" />
+    <img src="img/s0.png" />
+    <img src="img/s0.png" />
+    <img src="img/s0.png" />
+    <img src="img/s0.png" />
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    *{margin:0;padding:0;}
+    ul,li{list-style:none;}
+    .li{float:left;width:100px;}
+    .case{display:none;}
+    </style>
+    <script>
+        onload=function(){
+            var lis=document.getElementsByClassName("li");
+            for(var i=0;i<lis.length;i++){
+                lis[i].onmouseover=function(){//鼠标覆盖时出现内容
+                    this.children[1].style.display="block";
+                }
+                lis[i].onmouseout=function(){//鼠标移开时隐藏内容
+                    this.children[1].style.display="none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <ul id="box">
+        <li class="li">
+            <p>亚洲</p>
+            <ul class="case">
+                <li>中国</li>
+                <li>新加坡</li>
+                <li>日本</li>
+            </ul>
+        </li>
+        <li class="li">
+            <p>美洲</p>
+            <ul class="case">
+                <li>美国</li>
+                <li>加拿大</li>
+                <li>墨西哥</li>
+            </ul>
+        </li>
+        <li class="li">
+            <p>欧洲</p>
+            <ul class="case">
+                <li>英国</li>
+                <li>法国</li>
+                <li>德国</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="ajax.js"></script>
+    <style>
+        *{margin:0;padding: 0;}
+        ul,li{list-style: none;}
+        #case{float:left;width: 100px;cursor: pointer;}
+        #case li{width: 100px;height: 50px;background: red;border: 1px solid #000;line-height: 50px;text-align: center;}
+        #menu{float: left;width: 200px;}
+        #menu li{width:200px;height: 50px;background: blue;border: 1px solid #878787;line-height: 50px;text-align: center;}
+    </style>
+    <script>
+        onload=function(){
+            var li1=document.getElementsByClassName("li1");
+            var li2=document.getElementsByClassName("li2");
+            var menu=document.getElementById("menu");
+            for(var i=0;i<li1.length;i++){
+                li1[i].index=i;
+                li1[i].onclick=function(evt){
+                    var e=evt||window.event;
+                    window.event?e.cancelBubble=true:e.stopPropagation;
+                    for(var j=0;j<li1.length;j++){
+                        li1[j].style.background="red";
+                    }
+                    li1[this.index].style.background="blue";
+                    var url="http://localhost:80/AJAX/menu"+this.index+".txt";//地址
+                    menu.innerHTML="";//异步加载前先将前面内容清掉
+                    ajax.get(url,func);//调用
+                }
+                function func(str){//回调
+                    var obj=eval("("+str+")");
+                    var list=obj.list;
+                    for(var i=0;i<list.length;i++){
+                        var li=document.createElement("li");
+                        li.innerHTML=list[i];
+                        li.className="li2";
+                        menu.appendChild(li);
+                    }
+                }
+            }
+            document.onclick=function(){//点击body其他位置，菜单内容清掉
+                menu.innerHTML="";
+                for(var j=0;j<li1.length;j++){
+                    li1[j].style.background="red";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="case">
+    <li class="li1">商家1</li>
+    <li class="li1">商家2</li>
+    <li class="li1">商家3</li>
+    <li class="li1">商家4</li>
+</ul>
+<ul id="menu">
+
+</ul>
+</body>
+</html>
