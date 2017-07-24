@@ -1,0 +1,22 @@
+ul li{
+	list-style: none;
+}
+.selectM{
+	height: 100px;
+}
+.selectM li{
+	float: left;
+	padding: 3px 5px;
+	border: 1px solid black;
+	margin-left: 20px;
+	cursor: pointer;
+	color: black;
+}
+.selectM li.active{
+	border: 1px solid red;
+	color: red;
+}
+.selectM li.disabled{
+	border: 1px solid #ccc;
+	color: #ccc;
+}

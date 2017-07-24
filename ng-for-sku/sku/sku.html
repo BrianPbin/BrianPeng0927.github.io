@@ -1,0 +1,5 @@
+<div>
+	<div ng-repeat="(key,item) in skuType">
+		<list-com select-type="{{key}}" select-list='skuType[key]' select-change="changeHander(key,attrInfo)"></list-com>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+<div class="selectM">
+	<p>{{keyType|en_to_cn}}</p>
+	<ul>
+		<li ng-class="{'disabled':item.state==0,'active':item.state==1}" ng-repeat="item in list" ng-click="selectAct(item)">{{item.type}}</li>
+	</ul>
+</div>

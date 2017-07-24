@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="sku/sku.css" />
+		<script src="angular.min.js"></script>
+		<script src="sku/sku.js"></script>
+	</head>
+	<body ng-app='testApp'>
+		<div ng-controller='testCtrl'>
+			<sku-com sku='skuData'></sku-com>
+		</div>
+		<script>
+			var app = angular.module('testApp', ['sku']);
+
+			app.controller('testCtrl', ['$scope', function($scope){
+				$scope.skuData = [
+					{
+						"attrs": {
+							"color": "Red",
+							"size": "XL",
+							"pattern": "Normal"
+						},
+						"instock": true
+					},
+					{
+						"attrs": {
+							"color": "Red",
+							"size": "M",
+							"pattern": "Normal"
+						},
+						"instock": true
+					},
+					{
+						"attrs": {
+							"color": "Red",
+							"size": "XL",
+							"pattern": "Wide"
+						},
+						"instock": true
+					},
+					{
+						"attrs": {
+							"color": "Red",
+							"size": "XL",
+							"pattern": "Wide"
+						},
+						"instock": true
+					},
+					{
+						"attrs": {
+							"color": "Blue",
+							"size": "XL",
+							"pattern": "Wide"
+						},
+						"instock": true
+					},
+					{
+						"attrs": {
+							"color": "Blue",
+							"size": "XL",
+							"pattern": "Normal"
+						},
+						"instock": true
+					},
+					{
+						"attrs": {
+							"color": "Green",
+							"size": "XL",
+							"pattern": "Normal"
+						},
+						"instock": true
+					},
+					{
+						"attrs": {
+							"color": "Green",
+							"size": "M",
+							"pattern": "Normal"
+						},
+						"instock": true
+					},
+					{
+						"attrs": {
+							"color": "Green",
+							"size": "XL",
+							"pattern": "Normal"
+						},
+						"instock": false
+					},
+					{
+						"attrs": {
+							"color": "Blue",
+							"size": "XL",
+							"pattern": "Normal"
+						},
+						"instock": false
+					},
+					{
+						"attrs": {
+							"color": "Blue",
+							"size": "XL",
+							"pattern": "Normal"
+						},
+						"instock": false
+					},
+					{
+						"attrs": {
+							"color": "Blue",
+							"size": "XL",
+							"pattern": "Normal"
+						},
+						"instock": false
+					},
+					{
+						"attrs": {
+							"color": "Red",
+							"size": "M",
+							"pattern": "Normal"
+						},
+						"instock": false
+					},
+					{
+						"attrs": {
+							"color": "Red",
+							"size": "XL",
+							"pattern": "Normal"
+						},
+						"instock": false
+					},
+					{
+						"attrs": {
+							"color": "Red",
+							"size": "XL",
+							"pattern": "Wide"
+						},
+						"instock": false
+					}
+				]
+			}]);
+
+		</script>
+	</body>
+</html>
