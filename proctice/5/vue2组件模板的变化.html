@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="lib/vue2.0.js"></script>
+		<script>
+		//[Vue warn]: Component template should contain exactly one root element:
+		//里面必须有一个根元素包裹,不然会报错，放另外的<template></template>也是一样，里面必须只有一个标签包裹
+			Vue.component('aaa',{
+				template:'<div><h3>我是标题3</h3><strong>我是加粗标签</strong></div>'
+			})
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						msg:'hahaaaaaa'
+					}
+				})
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<aaa></aaa>
+			{{msg}}
+		</div>
+	</body>
+</html>

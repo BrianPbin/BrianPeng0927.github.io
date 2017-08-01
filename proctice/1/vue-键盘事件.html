@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						arr:['apple','banana','orange','pear'],
+                    	json:{a:'apple',b:'banana',c:'orange'}
+					},
+					methods:{
+						show:function(){
+							alert(111);
+						},
+						show2:function(ev){
+							if(ev.keyCode==13)alert('您按回车了');
+							else alert(ev.keyCode)
+						},
+						show3:function(){
+							alert(1)
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<input type="text" @keyup="show()" />
+			<br />
+			<input type="text" @keyup="show2($event)" />
+			<br />
+			<input type="text" @keyup.13="show3()" />
+			<br />
+			<input type="text" @keyup.enter="show3()" />
+			<br />
+			<input type="text" @keyup.left="show3()">
+		</div>
+		
+	</body>
+</html>

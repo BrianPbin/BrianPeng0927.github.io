@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box ul li.active{
+				background: #ccc;
+			}
+		</style>
+		<script src="js/vue.js"></script>
+		<script src="js/vue-resource.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						txt:'',
+						datalist:[],
+						nowIndex:-1
+					},
+					methods:{
+						get:function(ev){
+							if(ev.keyCode==40||ev.keyCode==38) return false;
+							if(ev.keyCode==13&&this.txt!=''){
+								window.open('https://www.baidu.com/s?wd='+this.txt);
+								this.txt='';
+							}
+							this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{
+								wd:this.txt
+							},{
+								jsonp:'cb'
+							}).then(function(data){
+								this.nowIndex=-1;
+								this.datalist=data.data.s;
+							},function(error){
+								console.log(error.status);
+							})
+						},
+						add:function(ev){
+							this.nowIndex--;
+							if(this.nowIndex<0){
+								this.nowIndex=0;
+							}
+							this.txt = this.datalist[this.nowIndex];
+						},
+						reduce:function(ev){
+							this.nowIndex++;
+							if(this.nowIndex>this.datalist.length-1){
+								this.nowIndex=this.datalist.length-1;
+							}
+							this.txt = this.datalist[this.nowIndex];
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<input type="text" v-model="txt" @keyup="get($event)" @keydown.up.prevent="add()" @keydown.down="reduce()" />
+			<br />
+			<ul v-if="datalist.length!=0">
+				<li v-for="item in datalist" :class="{active:nowIndex==$index}">{{item}}</li>
+			</ul>
+			<p v-if="datalist.length==0">暂无数据...</p>
+		</div>
+	</body>
+</html>

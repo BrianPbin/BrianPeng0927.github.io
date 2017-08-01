@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						mes:'hello world',
+						aaa:'NMBD'
+					},
+					methods:{
+						
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			{{mes|uppercase}}
+			<br />
+			{{aaa|lowercase}}
+			<br />
+			{{aaa|lowercase|capitalize}}
+			<br />
+			{{12|currency}}
+			<br />
+			{{12|currency '￥'}}
+		</div>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="lib/vue.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						mes:'hello world',
+						b:0,
+						json:{name:'aaa',age:18},
+						c:0
+					}
+				});
+				//用法
+				vm.$watch('mes',function(){
+					console.log('mes数据变了');
+					this.b+=1;
+				});
+				vm.$watch('json',function(){
+					console.log('json数据变了');
+				},{deep:true});//深度监视
+				document.onclick=function(){
+	                vm.json.age+=1;
+	                vm.c+=1;
+	            };
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<input type="text" v-model='mes' />
+			<br />
+			{{mes}}
+			<br />
+			mes变化了{{b}}次
+			<br />
+			{{json | json}}
+			<br />
+			json变化了{{c}}次
+		</div>
+	</body>
+</html>

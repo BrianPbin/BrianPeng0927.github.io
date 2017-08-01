@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="lib/vue.js"></script>
+    <script>
+        //<h2>welcome</h2>
+        Vue.filter('filterHtml',{
+            read:function(input){ //model-view
+                alert(1);
+                return input.replace(/<[^<]+>/g,'');
+            },
+            write:function(val){ //view -> model
+                console.log(val);
+                return val;
+            }
+        });
+        window.onload=function(){
+            var vm=new Vue({
+                data:{
+                    msg:'<strong>welcome</strong>'
+                }
+            }).$mount('#box');
+        };
+
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="msg | filterHtml">
+        <br>
+        {{{msg}}}
+    </div>
+</body>
+</html>

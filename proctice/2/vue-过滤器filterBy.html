@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="lib/vue.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						mes:'hello world',
+						arr:['apple','orange','banana','width','height'],
+						aa:''
+					},
+					methods:{
+						action:function(){
+							alert(this.mes);
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<!--debounce,配合事件，延迟执行-->
+		<div id="box">
+			<ul>
+				<!--参数，'过滤条件'-->
+				<li v-for="item in arr | filterBy 'a'"> 
+					{{item}}
+				</li>
+			</ul>
+			<br />
+			<!--过滤数据-->
+			<input type="text" v-model="aa" />
+			<ul>
+				<li v-for="item in arr | filterBy aa">
+					{{item}}
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

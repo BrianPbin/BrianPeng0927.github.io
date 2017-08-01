@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						mes:'hello world'
+					},
+					methods:{
+						show:function(ev){
+							alert(ev.clientX);
+//							ev.cancelBubble = true;
+						},
+						show2:function(){
+							alert(111)
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div @click="show2()">
+				<!--<button @click="show($event)">按钮</button>-->
+				<button @click.stop="show($event)">按钮</button>
+			</div>	
+		</div>
+	</body>
+</html>

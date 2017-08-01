@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="lib/vue.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						a:1
+					},
+					computed:{//* computed里面可以放置一些业务逻辑代码，一定记得return
+						/*b:function(){//默认调用get
+//							return 2;
+							//业务逻辑代码
+							return this.a+1;
+						}*/
+						b:{
+							get:function(){
+								return this.a+1;
+							},
+							set:function(val){
+								this.a=val;
+							}
+						}
+					}
+				});
+				console.log(vm.a);
+				document.onclick = function(){
+//					vm.a++;
+					vm.b=3;
+					console.log(vm.b)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			a -> {{a}}
+			<br />
+			b -> {{b}}
+		</div>
+	</body>
+</html>

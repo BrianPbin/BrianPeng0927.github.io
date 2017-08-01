@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<script src="js/vue-resource.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						mes:'hello world'
+					},
+					methods:{
+						get:function(){
+							this.$http.post('data/post.php',{
+								a:1,
+                            	b:2
+							},{
+								emulateJSON:true
+							}).then(function(data){
+								console.log(data);
+							},function(error){
+								console.log(error.status);
+							})
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<button @click="get()">按钮</button>
+		</div>
+	</body>
+</html>

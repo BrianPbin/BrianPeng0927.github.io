@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="lib/vue2.0.js"></script>
+		<script>
+			Vue.config.keyCodes.ctrl=17;//新的自定义键盘信息方法
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						msg:'hahaaaaaa'
+					},
+					methods:{
+						change:function(){
+							alert('是Ctrl')
+						}
+					}
+				})
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<input type="text" value="" @keydown.ctrl='change' />
+		</div>
+	</body>
+</html>

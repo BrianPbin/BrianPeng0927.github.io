@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="lib/vue.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						mes:'hello world'
+					},
+					created	:function(){
+						alert('实例已经创建');
+					},
+					beforeCompile:function(){
+						alert('编译之前');
+					},
+					compiled:function(){
+						alert('编译之后');
+					},
+					ready:function(){
+						alert('插入到文档中');
+					},
+					beforeDestroy:function(){
+						alert('销毁之前');
+					},
+					destroyed:function(){
+						alert('销毁之后');
+					}
+				});
+				//销毁vue实例对象方法
+				document.onclick = function(){
+					vm.$destroy();
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">{{mes}}</div>
+	</body>
+</html>

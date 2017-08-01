@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="lib/vue.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					Brian:'peng',//自定义属性
+//					el:'#box',
+					data:{
+						mes:'hello world'
+					}
+				}).$mount('#box');//手动挂载
+				console.log(vm.$el);//元素
+				vm.$el.style.background = 'red';
+				console.log(vm.$data.mes);//实例中数据
+				console.log(vm.$options.Brian);//获取自定义属性或方法
+				console.log(vm.$log());//查看现在的数据状态
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			{{mes}}
+		</div>
+	</body>
+</html>

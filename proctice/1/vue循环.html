@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						arr:['apple','banana','orange','pear'],
+                    	json:{a:'apple',b:'banana',c:'orange'}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li v-for="item in arr">
+					{{$index}}	{{item}}
+				</li>
+			</ul>
+			<hr />
+			<ul>
+				<li v-for="item in json">
+					{{item}} {{$index}} {{$key}}
+				</li>
+			</ul>
+			<hr />
+			<ul>
+				<li v-for="(b,a) in json">
+					{{a}} {{b}}
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

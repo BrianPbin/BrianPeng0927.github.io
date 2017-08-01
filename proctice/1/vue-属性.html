@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						url:'https://www.baidu.com/img/bd_logo1.png',
+						w:'200px',
+						t:'滚开别碰我！'
+					},
+					methods:{
+						
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<!--<img src="{{url}}" alt="" width="100px" />-->
+			<!--<img v-bind:src="url" alt="" width="100px" />-->
+			<!--<img :src="url" alt="" width="100px" />-->
+			<img :src="url" alt="" :width="w" :title="t" />
+		</div>
+	</body>
+</html>

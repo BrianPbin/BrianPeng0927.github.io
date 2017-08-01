@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="lib/vue.js"></script>
+		<script>
+		//track-by='索引'	提高循环性能
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						arr:['1','2','3']
+					},
+					methods:{
+						addTo:function(){
+							this.arr.push('4');
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<input type="button" value="添加" @click="addTo()" />
+			<ul>
+				<li v-for="item in arr" track-by="$index">{{item}}</li>
+			</ul>
+		</div>
+	</body>
+</html>

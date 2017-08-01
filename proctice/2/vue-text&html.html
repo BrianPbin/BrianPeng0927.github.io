@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="lib/vue.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						mes:'hello world',
+						mes1:'<strong>aaa</strong>'
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<span>{{mes}}</span>
+			<span v-text="mes"></span>
+			<br />
+			<span>{{{mes1}}}</span>
+			<span v-text="mes1"></span>
+			<br />
+			<span v-html="mes1"></span>
+		</div>
+	</body>
+</html>

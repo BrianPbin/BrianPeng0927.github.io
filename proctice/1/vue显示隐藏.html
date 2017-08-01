@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<script>
+			window.onload = function(){
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						mes:'hello world',
+						aa:true
+					},
+					methods:{
+						show:function(){
+							this.aa = !this.aa;
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<button v-on:click="show()">按钮</button>
+			<div style="width: 100px;height: 100px;background: red;" v-show="aa"></div>
+			<div style="width: 100px;height: 100px;background: black;" v-if="!aa"></div>
+		</div>
+	</body>
+</html>

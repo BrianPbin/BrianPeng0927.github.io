@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="lib/vue.js"></script>
+		<script>
+			window.onload = function(){
+				//写法
+				Vue.directive('color',function(val){
+					//this.el	-> 原生DOM元素
+					this.el.style.color = val;
+				})
+				Vue.directive('red',{
+					bind:function(){
+						this.el.style.background = 'red';
+					}
+				})
+				var vm = new Vue({
+					el:'#box',
+					data:{
+						mes:'hello world',
+						aa:'red'
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<!--用法v-XX-->
+			<span v-color="'blue'">{{mes}}</span>
+			<br />
+			<span v-color="aa">{{mes}}</span>
+			<br />
+			<span v-red>{{mes}}</span>
+		</div>
+	</body>
+</html>
